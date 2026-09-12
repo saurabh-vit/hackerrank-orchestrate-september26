@@ -64,8 +64,11 @@ def simulate_balance_timeline(
             continue
         dom = ss.day_of_month or 15
         amt = ss.base_amount
-        for day_offset in range(1, num_days + 1):
+        anchor = ss.anchor_date
+        for day_offset in range(num_days + 1):
             cur_d = start_date + timedelta(days=day_offset)
+            if anchor and cur_d <= anchor:
+                continue
             if ss.start_date and cur_d < ss.start_date:
                 continue
             if cur_d.day == dom:
@@ -81,14 +84,18 @@ def simulate_balance_timeline(
         if ev_id in spending_changes and isinstance(spending_changes[ev_id], Decimal):
             amt = spending_changes[ev_id]
 
-        for day_offset in range(1, num_days + 1):
+        anchor = rs.anchor_date
+        for day_offset in range(num_days + 1):
             cur_d = start_date + timedelta(days=day_offset)
+            if anchor and cur_d <= anchor:
+                continue
+
             match = False
             if rs.day_of_month:
                 if cur_d.day == rs.day_of_month:
                     match = True
             elif rs.interval_days:
-                diff = (cur_d - rs.anchor_date).days
+                diff = (cur_d - anchor).days
                 if diff > 0 and diff % rs.interval_days == 0:
                     match = True
 

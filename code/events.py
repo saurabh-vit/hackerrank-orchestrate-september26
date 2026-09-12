@@ -77,7 +77,7 @@ def normalize_and_build_ledger(
             category=raw_e.category,
             direction=raw_e.direction,
             amount=raw_e.amount,
-            currency=raw_e.currency,
+            currency=raw_e.currency or home_curr,
             event_date=raw_e.event_date,
             settlement_date=raw_e.settlement_date,
             status=raw_e.status,
@@ -196,7 +196,7 @@ def normalize_and_build_ledger(
 
     # Variable categories: group by category
     # Fixed categories: group by (category, normalized_description)
-    variable_categories = {'groceries', 'dining', 'transport', 'shopping', 'entertainment'}
+    variable_categories = {'groceries', 'dining', 'transport'}
 
     groups: Dict[Tuple[str, str, str], List[FinancialEvent]] = defaultdict(list)
     for e in hist_settled:
@@ -227,7 +227,10 @@ def normalize_and_build_ledger(
         if not intervals:
             continue
 
-        avg_interval = sum(intervals) / len(intervals)
+        import statistics
+        median_interval = statistics.median(intervals)
+        avg_interval = median_interval
+
         last_ev = ev_list[-1]
         last_date = last_ev.settlement_date or last_ev.event_date
         days_since_last = (eval_date - last_date).days
@@ -253,7 +256,14 @@ def normalize_and_build_ledger(
             # For variable expenses (groceries/dining/transport): use average of recent events
             recent = ev_list[-5:]
             base_amt = sum(e.amount_home for e in recent) / Decimal(len(recent))
-            interval_days = max(1, round(avg_interval))
+            if is_weekly:
+                interval_days = 7
+            elif is_biweekly:
+                interval_days = 14
+            elif is_monthly:
+                interval_days = 30
+            else:
+                interval_days = max(1, round(avg_interval))
             dom = None
             flex = last_ev.flexibility or 'fixed'
             min_allowed = last_ev.minimum_allowed_amount
@@ -287,10 +297,10 @@ def normalize_and_build_ledger(
         if cat == 'salary' and direction == 'credit':
             if remaining_household_salary is not None:
                 stream.base_amount = remaining_household_salary
-            if salary_resumes_date is not None and salary_resumes_amount is not None:
+            if salary_resumes_amount is not None:
                 stream.base_amount = salary_resumes_amount
-                stream.start_date = salary_resumes_date
-                stream.day_of_month = salary_resumes_date.day
+                if salary_resumes_date and salary_resumes_date > eval_date:
+                    stream.start_date = salary_resumes_date
             salary_streams.append(stream)
         else:
             recurring_expense_streams.append(stream)
