@@ -89,7 +89,7 @@ class TestBuyOrWait(unittest.TestCase):
         )
 
         ledger = events.normalize_and_build_ledger(
-            s.user_id, p, evs, [], self.datastore.images_by_event, {}, self.fx_graph, s.request_date
+            s.user_id, p, evs, [], self.datastore.images_by_event, {}, {}, self.fx_graph, s.request_date
         )
         decision = policy.evaluate_request(req, ledger, opts)
 
@@ -110,7 +110,7 @@ class TestBuyOrWait(unittest.TestCase):
         )
 
         ledger = events.normalize_and_build_ledger(
-            s.user_id, p, evs, [], self.datastore.images_by_event, {}, self.fx_graph, s.request_date
+            s.user_id, p, evs, [], self.datastore.images_by_event, {}, {}, self.fx_graph, s.request_date
         )
         decision = policy.evaluate_request(req, ledger, opts)
 

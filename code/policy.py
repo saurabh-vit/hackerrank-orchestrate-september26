@@ -45,7 +45,7 @@ def format_payment_plan(payments: Dict[date, Decimal]) -> str:
         if amt == amt.to_integral():
             amt_str = f"{int(amt)}"
         else:
-            amt_str = f"{amt:.2f}".rstrip('0').rstrip('.') if f"{amt:.2f}".endswith('.00') else f"{amt:.2f}"
+            amt_str = f"{amt:.2f}"
         parts.append(f"{d.isoformat()}:{amt_str}")
     return '|'.join(parts)
 
@@ -134,7 +134,7 @@ def evaluate_request(
         candidate_plans.append(CandidatePlan(
             method='full_payment',
             affordability_status='affordable_now',
-            payment_plan_str=f"{req_date.isoformat()}:{int(req_amt) if req_amt == req_amt.to_integral() else req_amt}",
+            payment_plan_str=format_payment_plan({req_date: req_amt}),
             payments={req_date: req_amt},
             first_payment_date=req_date,
             completion_date=req_date,
@@ -229,7 +229,7 @@ def evaluate_request(
                     candidate_plans.append(CandidatePlan(
                         method='full_payment',
                         affordability_status='affordable_with_plan',
-                        payment_plan_str=f"{req_date.isoformat()}:{int(req_amt) if req_amt == req_amt.to_integral() else req_amt}",
+                        payment_plan_str=format_payment_plan(payments),
                         payments=payments,
                         first_payment_date=req_date,
                         completion_date=req_date,
@@ -300,7 +300,7 @@ def evaluate_request(
         candidate_plans.append(CandidatePlan(
             method='wait',
             affordability_status='affordable_later',
-            payment_plan_str=f"{earliest_date.isoformat()}:{int(req_amt) if req_amt == req_amt.to_integral() else req_amt}",
+            payment_plan_str=format_payment_plan({earliest_date: req_amt}),
             payments={earliest_date: req_amt},
             first_payment_date=earliest_date,
             completion_date=earliest_date,

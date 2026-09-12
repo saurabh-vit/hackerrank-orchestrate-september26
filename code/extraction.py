@@ -69,6 +69,24 @@ def _save_cache(cache: dict):
 # Image extraction
 # ---------------------------------------------------------------------------
 
+def _load_env_file():
+    """Load .env file from repo root if present."""
+    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    env_path = os.path.join(root_dir, '.env')
+    if os.path.exists(env_path):
+        try:
+            with open(env_path, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#') and '=' in line:
+                        k, v = line.split('=', 1)
+                        k, v = k.strip(), v.strip().strip('"\'')
+                        if k and k not in os.environ:
+                            os.environ[k] = v
+        except Exception:
+            pass
+
+
 def _extract_image_with_llm(image_path: str, image_id: str) -> Dict[str, Any]:
     """
     Extract financial data from an image using a vision-capable LLM.
@@ -76,6 +94,7 @@ def _extract_image_with_llm(image_path: str, image_id: str) -> Dict[str, Any]:
     Tries Gemini first, then OpenAI, then falls back to manual extraction.
     Returns: {"amount": str, "currency": str, "date": str, "note": str}
     """
+    _load_env_file()
     # Try Gemini
     gemini_key = os.environ.get('GOOGLE_API_KEY') or os.environ.get('GEMINI_API_KEY')
     if gemini_key:
@@ -333,7 +352,7 @@ def _extract_salary_change(text: str) -> dict:
     
     # Look for effective date
     date_patterns = [
-        r'(?:effective|berlaku|mulai|from|starting)\s*(?:from\s*)?(\d{4}-\d{2}-\d{2})',
+        r'(?:effective|berlaku|mulai|from|starting|resumes on)\s*(?:from\s*)?(\d{4}-\d{2}-\d{2})',
         r'(\d{4}-\d{2}-\d{2})',
     ]
     

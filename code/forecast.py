@@ -64,13 +64,12 @@ def simulate_balance_timeline(
             continue
         dom = ss.day_of_month or 15
         amt = ss.base_amount
-        for day_offset in range(num_days + 1):
+        for day_offset in range(1, num_days + 1):
             cur_d = start_date + timedelta(days=day_offset)
             if ss.start_date and cur_d < ss.start_date:
                 continue
             if cur_d.day == dom:
-                if cur_d not in daily_credits:
-                    daily_credits[cur_d] = daily_credits.get(cur_d, Decimal('0')) + amt
+                daily_credits[cur_d] = daily_credits.get(cur_d, Decimal('0')) + amt
 
     # 4. Recurring expense streams
     for rs in ledger.recurring_expense_streams:
@@ -82,7 +81,7 @@ def simulate_balance_timeline(
         if ev_id in spending_changes and isinstance(spending_changes[ev_id], Decimal):
             amt = spending_changes[ev_id]
 
-        for day_offset in range(num_days + 1):
+        for day_offset in range(1, num_days + 1):
             cur_d = start_date + timedelta(days=day_offset)
             match = False
             if rs.day_of_month:

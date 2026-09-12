@@ -8,7 +8,7 @@ recurring income/expense streams for forecasting.
 import re
 from decimal import Decimal
 from datetime import date, timedelta
-from typing import Dict, List, Optional, Tuple, Set
+from typing import Dict, List, Optional, Tuple, Set, Any
 from dataclasses import dataclass, field
 from collections import defaultdict
 
@@ -56,6 +56,7 @@ def normalize_and_build_ledger(
     user_messages: List[Message],
     user_images: Dict[str, ImageRef],
     image_extractions: Dict[str, Dict[str, str]],
+    message_extractions: Dict[str, Dict[str, Any]],
     fx_graph: FXGraph,
     eval_date: date,
 ) -> UserLedger:
@@ -117,37 +118,44 @@ def normalize_and_build_ledger(
 
     for msg in user_messages:
         text = msg.message_text.lower()
+
+        # Use pre-extracted deltas from extraction.py
+        delta = message_extractions.get(msg.message_id, {})
+        delta_type = delta.get('type', 'unknown')
+        details = delta.get('details', {})
+
         if msg.related_event_id and msg.related_event_id in event_lookup:
             target_ev = event_lookup[msg.related_event_id]
-            if 'cancel' in text or 'dibatalkan' in text or 'batal' in text:
+            if delta_type == 'cancellation' or 'cancel' in text or 'dibatalkan' in text or 'batal' in text:
                 cancelled_event_ids.add(target_ev.event_id)
                 target_ev.status = 'cancelled'
 
         if msg.source_type == 'employer':
             if 'employment has ended' in text or 'contract has ended' in text:
                 employment_ended = True
-            
-            rem_m = re.search(r'remaining confirmed monthly salary is\s*(?:(?:IDR|INR|USD|EUR|ZAR)\s*)?([0-9,]+(?:\.[0-9]+)?)', msg.message_text, re.IGNORECASE)
-            if rem_m:
-                amt_str = rem_m.group(1).replace(',', '')
-                try:
-                    curr_m = re.search(r'\b(IDR|INR|USD|EUR|ZAR)\b', msg.message_text)
-                    m_curr = curr_m.group(1).upper() if curr_m else home_curr
-                    remaining_household_salary = fx_graph.convert(Decimal(amt_str), m_curr, home_curr, eval_date)
-                except Exception:
-                    pass
 
-            res_m = re.search(r'regular salary of\s*(?:(?:IDR|INR|USD|EUR|ZAR)\s*)?([0-9,]+(?:\.[0-9]+)?)\s*resumes on\s*(\d{4}-\d{2}-\d{2})', msg.message_text, re.IGNORECASE)
-            if res_m:
-                amt_str = res_m.group(1).replace(',', '')
-                d_str = res_m.group(2)
-                try:
-                    salary_resumes_date = date.fromisoformat(d_str)
-                    curr_m = re.search(r'\b(IDR|INR|USD|EUR|ZAR)\b', msg.message_text)
-                    m_curr = curr_m.group(1).upper() if curr_m else home_curr
-                    salary_resumes_amount = fx_graph.convert(Decimal(amt_str), m_curr, home_curr, salary_resumes_date)
-                except Exception:
-                    pass
+            if delta_type == 'salary_amendment':
+                if 'new_amount' in details:
+                    amt_str = details['new_amount']
+                    curr = details.get('currency', home_curr)
+                    eff_date_str = details.get('effective_date')
+                    try:
+                        eff_date = date.fromisoformat(eff_date_str) if eff_date_str else eval_date
+                        salary_resumes_amount = fx_graph.convert(Decimal(amt_str), curr, home_curr, eff_date)
+                        salary_resumes_date = eff_date
+                    except Exception:
+                        pass
+            else:
+                # Fallback to manual regex for cases not caught by extraction.py
+                rem_m = re.search(r'remaining confirmed monthly salary is\s*(?:(?:IDR|INR|USD|EUR|ZAR)\s*)?([0-9,]+(?:\.[0-9]+)?)', msg.message_text, re.IGNORECASE)
+                if rem_m:
+                    amt_str = rem_m.group(1).replace(',', '')
+                    try:
+                        curr_m = re.search(r'\b(IDR|INR|USD|EUR|ZAR)\b', msg.message_text)
+                        m_curr = curr_m.group(1).upper() if curr_m else home_curr
+                        remaining_household_salary = fx_graph.convert(Decimal(amt_str), m_curr, home_curr, eval_date)
+                    except Exception:
+                        pass
 
     # 3. Deduplication and linked event chains
     linked_to_settled: Set[str] = set()

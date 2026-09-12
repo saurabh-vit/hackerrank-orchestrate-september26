@@ -1,0 +1,1265 @@
+[loaders] Loaded: 275 profiles, 25342 events, 250 requests, 790 options, 134 rates, 215 messages, 16 images, 25 samples
+[loaders] All dataset invariants validated [OK]
+================================================================================
+           SAMPLE REQUESTS FIELD-BY-FIELD ACCURACY & DIFF TABLE           
+================================================================================
+[01/25] request_01 (User: user_01) -> [PERFECT MATCH]
+
+[02/25] request_02 (User: user_02) -> [MISMATCH]
+  Req: Amount=46018000 IDR Date=2025-08-05 Deadline=2025-10-10 PartialAllowed=False
+  User: AvailBalance=60383889.2 MinKeep=29158400 MaxInst=7 Prefs=['partial_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2025-08-05   Balance:  60383889.20   Headroom:  31225489.20
+    2025-08-07   Balance:  58242039.26   Headroom:  29083639.26
+    2025-08-08   Balance:  55458539.26   Headroom:  26300139.26
+    2025-08-09   Balance:  50258610.42   Headroom:  21100210.42
+    2025-08-11   Balance:  48720112.32   Headroom:  19561712.32
+    2025-08-12   Balance:  47492011.31   Headroom:  18333611.31
+    2025-08-13   Balance:  47122461.31   Headroom:  17964061.31
+    2025-08-14   Balance:  45824289.62   Headroom:  16665889.62
+    2025-08-15   Balance:  88574289.62   Headroom:  59415889.62
+    2025-08-19   Balance:  86414360.78   Headroom:  57255960.78
+    2025-08-20   Balance:  85358557.90   Headroom:  56200157.90
+    2025-08-26   Balance:  84130456.89   Headroom:  54972056.89
+    2025-08-29   Balance:  81970528.05   Headroom:  52812128.05
+    2025-09-04   Balance:  78436528.05   Headroom:  49278128.05
+    2025-09-07   Balance:  76294678.11   Headroom:  47136278.11
+    2025-09-08   Balance:  73002349.27   Headroom:  43843949.27
+    2025-09-09   Balance:  68734248.27   Headroom:  39575848.27
+    2025-09-10   Balance:  67678445.39   Headroom:  38520045.39
+    2025-09-11   Balance:  66139947.29   Headroom:  36981547.29
+    2025-09-13   Balance:  64472225.59   Headroom:  35313825.59
+    2025-09-15   Balance: 107222225.59   Headroom:  78063825.59
+    2025-09-18   Balance: 105062296.75   Headroom:  75903896.75
+    2025-09-23   Balance: 103834195.75   Headroom:  74675795.75
+    2025-09-28   Balance: 101674266.91   Headroom:  72515866.91
+    2025-10-01   Balance: 100618464.03   Headroom:  71460064.03
+    2025-10-04   Balance:  97084464.03   Headroom:  67926064.03
+    2025-10-07   Balance:  93714513.08   Headroom:  64556113.08
+    2025-10-08   Balance:  90422184.24   Headroom:  61263784.24
+    2025-10-09   Balance:  87382184.24   Headroom:  58223784.24
+    2025-10-11   Balance:  85843686.14   Headroom:  56685286.14
+    2025-10-13   Balance:  84175964.45   Headroom:  55017564.45
+    2025-10-15   Balance: 126925964.45   Headroom:  97767564.45
+    2025-10-18   Balance: 124766035.61   Headroom:  95607635.61
+    2025-10-21   Balance: 123537934.60   Headroom:  94379534.60
+    2025-10-22   Balance: 122482131.72   Headroom:  93323731.72
+    2025-10-28   Balance: 120322202.88   Headroom:  91163802.88
+    2025-11-03   Balance: 120322202.88   Headroom:  91163802.88
+    amount_safe_to_pay             [DIFF]
+      Expected : 17229139.2
+      Actual   : 16665889.622
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[03/25] request_03 (User: user_03) -> [MISMATCH]
+  Req: Amount=5491000 IDR Date=2019-09-03 Deadline=2019-11-15 PartialAllowed=False
+  User: AvailBalance=5810300 MinKeep=2668700 MaxInst=2 Prefs=['full_payment', 'partial_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2019-09-03   Balance:   5810300.00   Headroom:   3141600.00
+    2019-09-04   Balance:   4670300.00   Headroom:   2001600.00
+    2019-09-07   Balance:   4575300.00   Headroom:   1906600.00
+    2019-09-08   Balance:   4102996.30   Headroom:   1434296.30
+    2019-09-11   Balance:   3985196.30   Headroom:   1316496.30
+    2019-09-13   Balance:   3816498.55   Headroom:   1147798.55
+    2019-09-14   Balance:   3633226.40   Headroom:    964526.40
+    2019-09-15   Balance:   7998226.40   Headroom:   5329526.40
+    2019-09-18   Balance:   7693023.49   Headroom:   5024323.49
+    2019-09-28   Balance:   7483064.34   Headroom:   4814364.34
+    2019-10-04   Balance:   6343064.34   Headroom:   3674364.34
+    2019-10-05   Balance:   6180692.20   Headroom:   3511992.20
+    2019-10-08   Balance:   5708388.49   Headroom:   3039688.49
+    2019-10-09   Balance:   5613144.74   Headroom:   2944444.74
+    2019-10-11   Balance:   5495344.74   Headroom:   2826644.74
+    2019-10-13   Balance:   5326646.99   Headroom:   2657946.99
+    2019-10-14   Balance:   5305746.99   Headroom:   2637046.99
+    2019-10-15   Balance:   9670746.99   Headroom:   7002046.99
+    2019-10-18   Balance:   9460787.83   Headroom:   6792087.83
+    2019-10-26   Balance:   9298415.69   Headroom:   6629715.69
+    2019-10-28   Balance:   9088456.54   Headroom:   6419756.54
+    2019-10-30   Balance:   8993212.78   Headroom:   6324512.78
+    2019-11-04   Balance:   7853212.78   Headroom:   5184512.78
+    2019-11-07   Balance:   7643253.63   Headroom:   4974553.63
+    2019-11-08   Balance:   7380909.08   Headroom:   4712209.08
+    2019-11-11   Balance:   7263109.08   Headroom:   4594409.08
+    2019-11-12   Balance:   7094411.33   Headroom:   4425711.33
+    2019-11-14   Balance:   7073511.33   Headroom:   4404811.33
+    2019-11-15   Balance:  11438511.33   Headroom:   8769811.33
+    2019-11-16   Balance:  11276139.18   Headroom:   8607439.18
+    2019-11-17   Balance:  11066180.03   Headroom:   8397480.03
+    2019-11-20   Balance:  10970936.28   Headroom:   8302236.28
+    2019-11-27   Balance:  10760977.12   Headroom:   8092277.12
+    2019-12-02   Balance:  10760977.12   Headroom:   8092277.12
+    amount_safe_to_pay             [DIFF]
+      Expected : 873000
+      Actual   : 964526.402
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[04/25] request_04 (User: user_04) -> [MISMATCH]
+  Req: Amount=12693000 IDR Date=2024-06-04 Deadline=2024-06-19 PartialAllowed=True
+  User: AvailBalance=52206950 MinKeep=30686600 MaxInst=None Prefs=['full_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2024-06-04   Balance:  52206950.00   Headroom:  21520350.00
+    2024-06-05   Balance:  50202831.40   Headroom:  19516231.40
+    2024-06-08   Balance:  48633185.81   Headroom:  17946585.81
+    2024-06-09   Balance:  46722229.19   Headroom:  16035629.19
+    2024-06-10   Balance:  44750074.07   Headroom:  14063474.07
+    2024-06-11   Balance:  43045774.07   Headroom:  12359174.07
+    2024-06-12   Balance:  41283422.72   Headroom:  10596822.72
+    2024-06-15   Balance:  77903777.13   Headroom:  47217177.13
+    2024-06-16   Balance:  77020720.51   Headroom:  46334120.51
+    2024-06-22   Balance:  75451074.92   Headroom:  44764474.92
+    2024-06-23   Balance:  74568018.31   Headroom:  43881418.31
+    2024-06-24   Balance:  72928363.19   Headroom:  42241763.19
+    2024-06-29   Balance:  71358717.59   Headroom:  40672117.59
+    2024-06-30   Balance:  70475660.98   Headroom:  39789060.98
+    2024-07-01   Balance:  58182660.98   Headroom:  27496060.98
+    2024-07-05   Balance:  56178542.38   Headroom:  25491942.38
+    2024-07-06   Balance:  54608896.79   Headroom:  23922296.79
+    2024-07-07   Balance:  53725840.18   Headroom:  23039240.18
+    2024-07-08   Balance:  52086185.06   Headroom:  21399585.06
+    2024-07-09   Balance:  51058285.06   Headroom:  20371685.06
+    2024-07-10   Balance:  50725785.06   Headroom:  20039185.06
+    2024-07-12   Balance:  48963433.70   Headroom:  18276833.70
+    2024-07-13   Balance:  47393788.11   Headroom:  16707188.11
+    2024-07-14   Balance:  46510731.50   Headroom:  15824131.50
+    2024-07-15   Balance:  84700731.50   Headroom:  54014131.50
+    2024-07-20   Balance:  83131085.90   Headroom:  52444485.90
+    2024-07-21   Balance:  82248029.29   Headroom:  51561429.29
+    2024-07-22   Balance:  80608374.17   Headroom:  49921774.17
+    2024-07-27   Balance:  79038728.58   Headroom:  48352128.58
+    2024-07-28   Balance:  78155671.96   Headroom:  47469071.96
+    2024-08-01   Balance:  65862671.96   Headroom:  35176071.96
+    2024-08-03   Balance:  64293026.37   Headroom:  33606426.37
+    2024-08-04   Balance:  63409969.76   Headroom:  32723369.76
+    2024-08-05   Balance:  59766196.04   Headroom:  29079596.04
+    2024-08-09   Balance:  58738296.04   Headroom:  28051696.04
+    2024-08-10   Balance:  56836150.44   Headroom:  26149550.44
+    2024-08-11   Balance:  54567892.48   Headroom:  23881292.48
+    2024-08-12   Balance:  54190742.48   Headroom:  23504142.48
+    2024-08-15   Balance:  92380742.48   Headroom:  61694142.48
+    2024-08-17   Balance:  90811096.88   Headroom:  60124496.88
+    2024-08-18   Balance:  89928040.27   Headroom:  59241440.27
+    2024-08-19   Balance:  88288385.15   Headroom:  57601785.15
+    2024-08-24   Balance:  86718739.56   Headroom:  56032139.56
+    2024-08-25   Balance:  85835682.95   Headroom:  55149082.95
+    2024-08-31   Balance:  84266037.35   Headroom:  53579437.35
+    2024-09-01   Balance:  71089980.74   Headroom:  40403380.74
+    2024-09-02   Balance:  69450325.62   Headroom:  38763725.62
+    amount_safe_to_pay             [DIFF]
+      Expected : 8401800
+      Actual   : 10596822.720
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[05/25] request_05 (User: user_05) -> [MISMATCH]
+  Req: Amount=15488 ZAR Date=2025-11-06 Deadline=2026-01-12 PartialAllowed=False
+  User: AvailBalance=46475.1 MinKeep=13100 MaxInst=4 Prefs=['full_payment', 'partial_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2025-11-06   Balance:     45761.39   Headroom:     32661.39
+    2025-11-10   Balance:     45039.02   Headroom:     31939.02
+    2025-11-11   Balance:     42931.21   Headroom:     29831.21
+    2025-11-12   Balance:     42414.80   Headroom:     29314.80
+    2025-11-13   Balance:     41574.40   Headroom:     28474.40
+    2025-11-18   Balance:     40832.44   Headroom:     27732.44
+    2025-11-25   Balance:     40090.47   Headroom:     26990.47
+    2025-11-26   Balance:     39687.37   Headroom:     26587.37
+    2025-12-02   Balance:     33973.41   Headroom:     20873.41
+    2025-12-06   Balance:     33259.70   Headroom:     20159.70
+    2025-12-09   Balance:     32517.73   Headroom:     19417.73
+    2025-12-10   Balance:     31392.26   Headroom:     18292.26
+    2025-12-11   Balance:     30026.41   Headroom:     16926.41
+    2025-12-12   Balance:     29913.11   Headroom:     16813.11
+    2025-12-13   Balance:     29072.71   Headroom:     15972.71
+    2025-12-16   Balance:     28330.74   Headroom:     15230.74
+    2025-12-23   Balance:     27588.78   Headroom:     14488.78
+    2025-12-24   Balance:     27185.68   Headroom:     14085.68
+    2025-12-30   Balance:     26443.71   Headroom:     13343.71
+    2026-01-02   Balance:     21471.71   Headroom:      8371.71
+    2026-01-06   Balance:     20016.04   Headroom:      6916.04
+    2026-01-07   Balance:     19612.93   Headroom:      6512.93
+    2026-01-10   Balance:     18492.71   Headroom:      5392.71
+    2026-01-11   Balance:     17524.71   Headroom:      4424.71
+    2026-01-12   Balance:     17411.41   Headroom:      4311.41
+    2026-01-13   Balance:     15829.05   Headroom:      2729.05
+    2026-01-20   Balance:     15087.09   Headroom:      1987.09
+    2026-01-21   Balance:     14683.98   Headroom:      1583.98
+    2026-01-27   Balance:     13942.02   Headroom:       842.02
+    2026-02-02   Balance:      8970.02   Headroom:     -4129.98
+    2026-02-03   Balance:      8228.05   Headroom:     -4871.95
+    2026-02-04   Balance:      7824.95   Headroom:     -5275.05
+    amount_safe_to_pay             [DIFF]
+      Expected : 737
+      Actual   : 0
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[06/25] request_06 (User: user_06) -> [MISMATCH]
+  Req: Amount=620.4 EUR Date=2026-01-03 Deadline=2026-01-14 PartialAllowed=False
+  User: AvailBalance=1942.4 MinKeep=800 MaxInst=None Prefs=['full_payment', 'partial_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2026-01-03   Balance:      2700.95   Headroom:      1900.95
+    2026-01-04   Balance:      2652.03   Headroom:      1852.03
+    2026-01-07   Balance:      2555.57   Headroom:      1755.57
+    2026-01-08   Balance:      2504.70   Headroom:      1704.70
+    2026-01-10   Balance:      2485.70   Headroom:      1685.70
+    2026-01-11   Balance:      2436.78   Headroom:      1636.78
+    2026-01-12   Balance:      2395.78   Headroom:      1595.78
+    2026-01-13   Balance:      2365.91   Headroom:      1565.91
+    2026-01-14   Balance:      2330.89   Headroom:      1530.89
+    2026-01-17   Balance:      2286.30   Headroom:      1486.30
+    2026-01-18   Balance:      2212.50   Headroom:      1412.50
+    2026-01-23   Balance:      2187.63   Headroom:      1387.63
+    2026-01-25   Balance:      2138.71   Headroom:      1338.71
+    2026-01-27   Balance:      2094.11   Headroom:      1294.11
+    2026-01-28   Balance:      2069.24   Headroom:      1269.24
+    2026-02-01   Balance:      2020.32   Headroom:      1220.32
+    2026-02-02   Balance:      1995.45   Headroom:      1195.45
+    2026-02-03   Balance:      2778.87   Headroom:      1978.87
+    2026-02-06   Balance:      2734.27   Headroom:      1934.27
+    2026-02-07   Balance:      2657.54   Headroom:      1857.54
+    2026-02-08   Balance:      2582.62   Headroom:      1782.62
+    2026-02-10   Balance:      2563.62   Headroom:      1763.62
+    2026-02-11   Balance:      2522.62   Headroom:      1722.62
+    2026-02-12   Balance:      2497.75   Headroom:      1697.75
+    2026-02-13   Balance:      2457.74   Headroom:      1657.74
+    2026-02-15   Balance:      2408.82   Headroom:      1608.82
+    2026-02-16   Balance:      2364.22   Headroom:      1564.22
+    2026-02-17   Balance:      2339.35   Headroom:      1539.35
+    2026-02-22   Balance:      2265.55   Headroom:      1465.55
+    2026-02-26   Balance:      2220.96   Headroom:      1420.96
+    2026-02-27   Balance:      2196.08   Headroom:      1396.08
+    2026-03-01   Balance:      2147.16   Headroom:      1347.16
+    2026-03-03   Balance:      2930.58   Headroom:      2130.58
+    2026-03-04   Balance:      2905.71   Headroom:      2105.71
+    2026-03-07   Balance:      2853.85   Headroom:      2053.85
+    2026-03-08   Balance:      2734.33   Headroom:      1934.33
+    2026-03-09   Balance:      2709.46   Headroom:      1909.46
+    2026-03-10   Balance:      2690.46   Headroom:      1890.46
+    2026-03-13   Balance:      2644.46   Headroom:      1844.46
+    2026-03-14   Balance:      2619.59   Headroom:      1819.59
+    2026-03-15   Balance:      2535.66   Headroom:      1735.66
+    2026-03-18   Balance:      2491.06   Headroom:      1691.06
+    2026-03-19   Balance:      2466.19   Headroom:      1666.19
+    2026-03-22   Balance:      2417.27   Headroom:      1617.27
+    2026-03-24   Balance:      2392.40   Headroom:      1592.40
+    2026-03-28   Balance:      2347.80   Headroom:      1547.80
+    2026-03-29   Balance:      2274.01   Headroom:      1474.01
+    2026-04-03   Balance:      3032.55   Headroom:      2232.55
+    amount_safe_to_pay             [DIFF]
+      Expected : 603.3
+      Actual   : 620.4
+    affordability_status           [DIFF]
+      Expected : affordable_with_plan
+      Actual   : affordable_now
+    recommended_payment_method     [OK]
+    payment_plan                   [DIFF]
+      Expected : 2026-01-03:620.40
+      Actual   : 2026-01-03:620.4
+    earliest_date_for_full_payment [DIFF]
+      Expected : 2026-01-15
+      Actual   : 2026-01-03
+    spending_changes_needed        [DIFF]
+      Expected : stop:event_476
+      Actual   : none
+
+[07/25] request_07 (User: user_07) -> [MISMATCH]
+  Req: Amount=197400 INR Date=2024-09-05 Deadline=2024-11-14 PartialAllowed=True
+  User: AvailBalance=218945.56 MinKeep=93000 MaxInst=12 Prefs=['installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2024-09-05   Balance:    218945.56   Headroom:    125945.56
+    2024-09-08   Balance:    212735.99   Headroom:    119735.99
+    2024-09-12   Balance:    206043.93   Headroom:    113043.93
+    2024-09-13   Balance:    189388.93   Headroom:     96388.93
+    2024-09-16   Balance:    183528.42   Headroom:     90528.42
+    2024-09-20   Balance:    180341.73   Headroom:     87341.73
+    2024-09-23   Balance:    329341.73   Headroom:    236341.73
+    2024-09-26   Balance:    322649.67   Headroom:    229649.67
+    2024-10-04   Balance:    288449.67   Headroom:    195449.67
+    2024-10-07   Balance:    282589.16   Headroom:    189589.16
+    2024-10-08   Balance:    276379.59   Headroom:    183379.59
+    2024-10-10   Balance:    269687.53   Headroom:    176687.53
+    2024-10-11   Balance:    266500.84   Headroom:    173500.84
+    2024-10-13   Balance:    249845.84   Headroom:    156845.84
+    2024-10-23   Balance:    398845.84   Headroom:    305845.84
+    2024-10-24   Balance:    392153.77   Headroom:    299153.77
+    2024-10-28   Balance:    386293.27   Headroom:    293293.27
+    2024-11-01   Balance:    383106.58   Headroom:    290106.58
+    2024-11-04   Balance:    348906.58   Headroom:    255906.58
+    2024-11-07   Balance:    342214.51   Headroom:    249214.51
+    2024-11-08   Balance:    336004.94   Headroom:    243004.94
+    2024-11-13   Balance:    319349.94   Headroom:    226349.94
+    2024-11-18   Balance:    313489.44   Headroom:    220489.44
+    2024-11-21   Balance:    306797.37   Headroom:    213797.37
+    2024-11-22   Balance:    303610.68   Headroom:    210610.68
+    2024-11-23   Balance:    452610.68   Headroom:    359610.68
+    2024-12-04   Balance:    418410.68   Headroom:    325410.68
+    amount_safe_to_pay             [DIFF]
+      Expected : 87170.56
+      Actual   : 87341.730
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[08/25] request_08 (User: user_08) -> [MISMATCH]
+  Req: Amount=996.6 EUR Date=2025-02-07 Deadline=2025-04-15 PartialAllowed=False
+  User: AvailBalance=1536.57 MinKeep=800 MaxInst=None Prefs=['full_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2025-02-07   Balance:      2870.42   Headroom:      2070.42
+    2025-02-10   Balance:      2679.42   Headroom:      1879.42
+    2025-02-11   Balance:      2622.17   Headroom:      1822.17
+    2025-02-12   Balance:      2561.82   Headroom:      1761.82
+    2025-02-13   Balance:      2512.18   Headroom:      1712.18
+    2025-02-18   Balance:      2454.93   Headroom:      1654.93
+    2025-02-19   Balance:      2418.58   Headroom:      1618.58
+    2025-02-25   Balance:      2361.33   Headroom:      1561.33
+    2025-02-26   Balance:      2324.99   Headroom:      1524.99
+    2025-02-27   Balance:      2275.34   Headroom:      1475.34
+    2025-03-01   Balance:      1807.84   Headroom:      1007.84
+    2025-03-04   Balance:      1750.59   Headroom:       950.59
+    2025-03-05   Balance:      1633.69   Headroom:       833.69
+    2025-03-07   Balance:      2967.54   Headroom:      2167.54
+    2025-03-10   Balance:      2776.54   Headroom:      1976.54
+    2025-03-11   Balance:      2719.29   Headroom:      1919.29
+    2025-03-12   Balance:      2658.95   Headroom:      1858.95
+    2025-03-13   Balance:      2609.30   Headroom:      1809.30
+    2025-03-18   Balance:      2552.05   Headroom:      1752.05
+    2025-03-19   Balance:      2515.71   Headroom:      1715.71
+    2025-03-25   Balance:      2458.46   Headroom:      1658.46
+    2025-03-26   Balance:      2422.11   Headroom:      1622.11
+    2025-03-27   Balance:      2372.46   Headroom:      1572.46
+    2025-04-01   Balance:      1847.71   Headroom:      1047.71
+    2025-04-02   Balance:      1811.37   Headroom:      1011.37
+    2025-04-05   Balance:      1730.82   Headroom:       930.82
+    2025-04-07   Balance:      3064.67   Headroom:      2264.67
+    2025-04-08   Balance:      3007.42   Headroom:      2207.42
+    2025-04-09   Balance:      2971.07   Headroom:      2171.07
+    2025-04-10   Balance:      2730.43   Headroom:      1930.43
+    2025-04-12   Balance:      2706.43   Headroom:      1906.43
+    2025-04-15   Balance:      2649.18   Headroom:      1849.18
+    2025-04-16   Balance:      2612.83   Headroom:      1812.83
+    2025-04-22   Balance:      2555.58   Headroom:      1755.58
+    2025-04-23   Balance:      2519.23   Headroom:      1719.23
+    2025-04-24   Balance:      2469.59   Headroom:      1669.59
+    2025-04-29   Balance:      2412.34   Headroom:      1612.34
+    2025-04-30   Balance:      2375.99   Headroom:      1575.99
+    2025-05-01   Balance:      1908.49   Headroom:      1108.49
+    2025-05-05   Balance:      1827.94   Headroom:      1027.94
+    2025-05-06   Balance:      1770.69   Headroom:       970.69
+    2025-05-07   Balance:      3068.20   Headroom:      2268.20
+    2025-05-08   Balance:      3018.55   Headroom:      2218.55
+    amount_safe_to_pay             [DIFF]
+      Expected : 284.57
+      Actual   : 833.694
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [DIFF]
+      Expected : 2025-04-15:996.60
+      Actual   : 2025-05-07:996.6
+    earliest_date_for_full_payment [DIFF]
+      Expected : 2025-04-15
+      Actual   : 2025-05-07
+    spending_changes_needed        [OK]
+[09/25] request_09 (User: user_09) -> [PERFECT MATCH]
+
+[10/25] request_10 (User: user_10) -> [MISMATCH]
+  Req: Amount=266700 INR Date=2024-12-06 Deadline=2025-02-10 PartialAllowed=True
+  User: AvailBalance=750155 MinKeep=225400 MaxInst=6 Prefs=['partial_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2024-12-06   Balance:    744579.80   Headroom:    519179.80
+    2024-12-07   Balance:    726808.67   Headroom:    501408.67
+    2024-12-11   Balance:    766364.17   Headroom:    540964.17
+    2024-12-12   Balance:    754082.27   Headroom:    528682.27
+    2024-12-13   Balance:    748507.07   Headroom:    523107.07
+    2024-12-14   Balance:    737378.24   Headroom:    511978.24
+    2024-12-15   Balance:    872285.31   Headroom:    646885.31
+    2024-12-16   Balance:    867640.12   Headroom:    642240.12
+    2024-12-19   Balance:    858158.22   Headroom:    632758.22
+    2024-12-20   Balance:    852583.02   Headroom:    627183.02
+    2024-12-26   Balance:    843101.11   Headroom:    617701.11
+    2024-12-27   Balance:    837525.91   Headroom:    612125.91
+    2024-12-28   Balance:    828292.09   Headroom:    602892.09
+    2025-01-02   Balance:    818810.19   Headroom:    593410.19
+    2025-01-03   Balance:    744134.99   Headroom:    518734.99
+    2025-01-07   Balance:    726363.86   Headroom:    500963.86
+    2025-01-09   Balance:    716881.95   Headroom:    491481.95
+    2025-01-10   Balance:    711306.75   Headroom:    485906.75
+    2025-01-11   Balance:    741628.43   Headroom:    516228.43
+    2025-01-12   Balance:    738828.43   Headroom:    513428.43
+    2025-01-14   Balance:    736933.43   Headroom:    511533.43
+    2025-01-15   Balance:    871840.50   Headroom:    646440.50
+    2025-01-16   Balance:    857713.41   Headroom:    632313.41
+    2025-01-17   Balance:    852138.21   Headroom:    626738.21
+    2025-01-23   Balance:    842656.30   Headroom:    617256.30
+    2025-01-24   Balance:    837081.10   Headroom:    611681.10
+    2025-01-25   Balance:    827847.28   Headroom:    602447.28
+    2025-01-30   Balance:    818365.38   Headroom:    592965.38
+    2025-01-31   Balance:    812790.18   Headroom:    587390.18
+    2025-02-03   Balance:    743690.18   Headroom:    518290.18
+    2025-02-06   Balance:    734208.27   Headroom:    508808.27
+    2025-02-07   Balance:    710861.94   Headroom:    485461.94
+    2025-02-08   Balance:    701628.12   Headroom:    476228.12
+    2025-02-11   Balance:    741183.62   Headroom:    515783.62
+    2025-02-12   Balance:    738383.62   Headroom:    512983.62
+    2025-02-13   Balance:    728901.72   Headroom:    503501.72
+    2025-02-14   Balance:    721431.52   Headroom:    496031.52
+    2025-02-15   Balance:    856338.59   Headroom:    630938.59
+    2025-02-16   Balance:    851693.39   Headroom:    626293.39
+    2025-02-20   Balance:    842211.49   Headroom:    616811.49
+    2025-02-21   Balance:    836636.29   Headroom:    611236.29
+    2025-02-22   Balance:    827402.47   Headroom:    602002.47
+    2025-02-27   Balance:    817920.56   Headroom:    592520.56
+    2025-02-28   Balance:    812345.36   Headroom:    586945.36
+    2025-03-03   Balance:    743245.36   Headroom:    517845.36
+    2025-03-06   Balance:    733763.46   Headroom:    508363.46
+    amount_safe_to_pay             [DIFF]
+      Expected : 12700
+      Actual   : 266700
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [DIFF]
+      Expected : 
+      Actual   : 2024-12-06
+    spending_changes_needed        [OK]
+
+[11/25] request_11 (User: user_11) -> [MISMATCH]
+  Req: Amount=13110000 IDR Date=2025-05-03 Deadline=2025-06-12 PartialAllowed=False
+  User: AvailBalance=63531795 MinKeep=34140600 MaxInst=None Prefs=['full_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2025-05-03   Balance: 141051795.00   Headroom: 106911195.00
+    2025-05-05   Balance: 138097295.00   Headroom: 103956695.00
+    2025-05-08   Balance: 133967798.85   Headroom:  99827198.85
+    2025-05-09   Balance: 132086798.85   Headroom:  97946198.85
+    2025-05-10   Balance: 129542698.85   Headroom:  95402098.85
+    2025-05-11   Balance: 128359563.49   Headroom:  94218963.49
+    2025-05-12   Balance: 125532661.57   Headroom:  91392061.57
+    2025-05-14   Balance: 124080346.58   Headroom:  89939746.58
+    2025-05-16   Balance: 122479419.83   Headroom:  88338819.83
+    2025-05-18   Balance: 121146088.86   Headroom:  87005488.86
+    2025-05-25   Balance: 119962953.50   Headroom:  85822353.50
+    2025-05-28   Balance: 118629622.53   Headroom:  84489022.53
+    2025-06-03   Balance: 196149622.53   Headroom: 162009022.53
+    2025-06-04   Balance: 194865457.55   Headroom: 160724857.55
+    2025-06-05   Balance: 191910957.55   Headroom: 157770357.55
+    2025-06-07   Balance: 190577626.58   Headroom: 156437026.58
+    2025-06-08   Balance: 186598326.04   Headroom: 152457726.04
+    2025-06-09   Balance: 184717326.04   Headroom: 150576726.04
+    2025-06-10   Balance: 182173226.04   Headroom: 148032626.04
+    2025-06-12   Balance: 179346324.12   Headroom: 145205724.12
+    2025-06-14   Balance: 179178174.12   Headroom: 145037574.12
+    2025-06-15   Balance: 177577247.36   Headroom: 143436647.36
+    2025-06-17   Balance: 176243916.40   Headroom: 142103316.40
+    2025-06-22   Balance: 175060781.04   Headroom: 140920181.04
+    2025-06-25   Balance: 173776616.05   Headroom: 139636016.05
+    2025-06-27   Balance: 172443285.08   Headroom: 138302685.08
+    2025-07-03   Balance: 249963285.08   Headroom: 215822685.08
+    2025-07-05   Balance: 247008785.08   Headroom: 212868185.08
+    2025-07-06   Balance: 245825649.72   Headroom: 211685049.72
+    2025-07-07   Balance: 244492318.75   Headroom: 210351718.75
+    2025-07-08   Balance: 241696153.57   Headroom: 207555553.57
+    2025-07-09   Balance: 239815153.57   Headroom: 205674553.57
+    2025-07-10   Balance: 237271053.57   Headroom: 203130453.57
+    2025-07-12   Balance: 234444151.65   Headroom: 200303551.65
+    2025-07-14   Balance: 234276001.65   Headroom: 200135401.65
+    2025-07-15   Balance: 232675074.90   Headroom: 198534474.90
+    2025-07-16   Balance: 231390909.91   Headroom: 197250309.91
+    2025-07-17   Balance: 230057578.94   Headroom: 195916978.94
+    2025-07-20   Balance: 228874443.58   Headroom: 194733843.58
+    2025-07-27   Balance: 227541112.61   Headroom: 193400512.61
+    2025-08-01   Balance: 227541112.61   Headroom: 193400512.61
+    amount_safe_to_pay             [DIFF]
+      Expected : 12510645
+      Actual   : 13110000
+    affordability_status           [DIFF]
+      Expected : affordable_with_plan
+      Actual   : affordable_now
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [DIFF]
+      Expected : 2025-07-15
+      Actual   : 2025-05-03
+    spending_changes_needed        [DIFF]
+      Expected : reduce_to:event_989:665950
+      Actual   : none
+
+[12/25] request_12 (User: user_12) -> [MISMATCH]
+  Req: Amount=65164 ZAR Date=2026-04-05 Deadline=2026-06-20 PartialAllowed=False
+  User: AvailBalance=193089.89 MinKeep=43200 MaxInst=11 Prefs=['partial_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2026-04-05   Balance:    189483.69   Headroom:    146283.69
+    2026-04-07   Balance:    187111.67   Headroom:    143911.67
+    2026-04-08   Balance:    185606.87   Headroom:    142406.87
+    2026-04-10   Balance:    184350.98   Headroom:    141150.98
+    2026-04-11   Balance:    183903.28   Headroom:    140703.28
+    2026-04-17   Balance:    179990.75   Headroom:    136790.75
+    2026-04-18   Balance:    177840.34   Headroom:    134640.34
+    2026-04-27   Balance:    175468.32   Headroom:    132268.32
+    2026-05-01   Balance:    163676.32   Headroom:    120476.32
+    2026-05-05   Balance:    160070.12   Headroom:    116870.12
+    2026-05-07   Balance:    157698.10   Headroom:    114498.10
+    2026-05-08   Balance:    154652.79   Headroom:    111452.79
+    2026-05-09   Balance:    152502.38   Headroom:    109302.38
+    2026-05-10   Balance:    151246.50   Headroom:    108046.50
+    2026-05-11   Balance:    150798.80   Headroom:    107598.80
+    2026-05-17   Balance:    148426.78   Headroom:    105226.78
+    2026-05-27   Balance:    146054.76   Headroom:    102854.76
+    2026-05-29   Balance:    144514.24   Headroom:    101314.24
+    2026-05-30   Balance:    142363.84   Headroom:     99163.84
+    2026-06-01   Balance:    130571.84   Headroom:     87371.84
+    2026-06-05   Balance:    126965.64   Headroom:     83765.64
+    2026-06-06   Balance:    124593.62   Headroom:     81393.62
+    2026-06-08   Balance:    123088.82   Headroom:     79888.82
+    2026-06-09   Balance:    121832.93   Headroom:     78632.93
+    2026-06-11   Balance:    121385.23   Headroom:     78185.23
+    2026-06-16   Balance:    119013.21   Headroom:     75813.21
+    2026-06-19   Balance:    117472.69   Headroom:     74272.69
+    2026-06-20   Balance:    115322.29   Headroom:     72122.29
+    2026-06-26   Balance:    112950.27   Headroom:     69750.27
+    2026-07-01   Balance:    101158.27   Headroom:     57958.27
+    2026-07-04   Balance:    101158.27   Headroom:     57958.27
+    amount_safe_to_pay             [DIFF]
+      Expected : 65164
+      Actual   : 57958.272
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [DIFF]
+      Expected : 2026-04-05
+      Actual   : 
+    spending_changes_needed        [DIFF]
+      Expected : none
+      Actual   : stop:event_1016|reduce_to:event_1017:511.28|reduce_to:event_1054:1072.50
+
+[13/25] request_13 (User: user_13) -> [MISMATCH]
+  Req: Amount=941.6 EUR Date=2024-03-07 Deadline=2024-05-15 PartialAllowed=True
+  User: AvailBalance=2789.52 MinKeep=1300 MaxInst=None Prefs=['full_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2024-03-07   Balance:      2789.52   Headroom:      1489.52
+    2024-03-10   Balance:      2728.52   Headroom:      1428.52
+    2024-03-11   Balance:      2699.52   Headroom:      1399.52
+    2024-03-12   Balance:      2605.55   Headroom:      1305.55
+    2024-03-13   Balance:      2540.98   Headroom:      1240.98
+    2024-03-14   Balance:      2485.09   Headroom:      1185.09
+    2024-03-15   Balance:      5172.17   Headroom:      3872.17
+    2024-03-16   Balance:      5139.21   Headroom:      3839.21
+    2024-03-19   Balance:      5045.24   Headroom:      3745.24
+    2024-03-20   Balance:      5001.67   Headroom:      3701.67
+    2024-03-26   Balance:      4907.70   Headroom:      3607.70
+    2024-03-27   Balance:      4864.12   Headroom:      3564.12
+    2024-03-28   Balance:      4808.24   Headroom:      3508.24
+    2024-04-02   Balance:      4091.67   Headroom:      2791.67
+    2024-04-03   Balance:      4048.09   Headroom:      2748.09
+    2024-04-06   Balance:      3913.84   Headroom:      2613.84
+    2024-04-09   Balance:      3819.88   Headroom:      2519.88
+    2024-04-10   Balance:      3715.30   Headroom:      2415.30
+    2024-04-11   Balance:      3630.41   Headroom:      2330.41
+    2024-04-13   Balance:      3609.41   Headroom:      2309.41
+    2024-04-15   Balance:      4952.95   Headroom:      3652.95
+    2024-04-16   Balance:      4826.03   Headroom:      3526.03
+    2024-04-17   Balance:      4782.45   Headroom:      3482.45
+    2024-04-23   Balance:      4688.48   Headroom:      3388.48
+    2024-04-24   Balance:      4644.90   Headroom:      3344.90
+    2024-04-25   Balance:      4589.02   Headroom:      3289.02
+    2024-04-30   Balance:      4495.05   Headroom:      3195.05
+    2024-05-01   Balance:      4451.47   Headroom:      3151.47
+    2024-05-02   Balance:      3828.87   Headroom:      2528.87
+    2024-05-06   Balance:      3694.62   Headroom:      2394.62
+    2024-05-07   Balance:      3600.66   Headroom:      2300.66
+    2024-05-08   Balance:      3557.08   Headroom:      2257.08
+    2024-05-09   Balance:      3501.19   Headroom:      2201.19
+    2024-05-10   Balance:      3440.19   Headroom:      2140.19
+    2024-05-11   Balance:      3411.19   Headroom:      2111.19
+    2024-05-13   Balance:      3390.19   Headroom:      2090.19
+    2024-05-14   Balance:      3296.23   Headroom:      1996.23
+    2024-05-15   Balance:      4596.19   Headroom:      3296.19
+    2024-05-17   Balance:      4563.23   Headroom:      3263.23
+    2024-05-21   Balance:      4469.26   Headroom:      3169.26
+    2024-05-22   Balance:      4425.69   Headroom:      3125.69
+    2024-05-23   Balance:      4369.80   Headroom:      3069.80
+    2024-05-28   Balance:      4275.83   Headroom:      2975.83
+    2024-05-29   Balance:      4232.26   Headroom:      2932.26
+    2024-06-02   Balance:      3609.66   Headroom:      2309.66
+    2024-06-04   Balance:      3515.69   Headroom:      2215.69
+    2024-06-05   Balance:      3472.11   Headroom:      2172.11
+    amount_safe_to_pay             [DIFF]
+      Expected : 433.4
+      Actual   : 941.6
+    affordability_status           [DIFF]
+      Expected : affordable_later
+      Actual   : affordable_now
+    recommended_payment_method     [DIFF]
+      Expected : wait
+      Actual   : full_payment
+    payment_plan                   [DIFF]
+      Expected : 2024-05-15:941.60
+      Actual   : 2024-03-07:941.6
+    earliest_date_for_full_payment [DIFF]
+      Expected : 2024-05-15
+      Actual   : 2024-03-07
+    spending_changes_needed        [OK]
+
+[14/25] request_14 (User: user_14) -> [MISMATCH]
+  Req: Amount=5414.2 EUR Date=2025-08-04 Deadline=2025-10-04 PartialAllowed=True
+  User: AvailBalance=3931.74 MinKeep=2200 MaxInst=None Prefs=['partial_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2025-08-04   Balance:      3931.74   Headroom:      1731.74
+    2025-08-07   Balance:      3778.05   Headroom:      1578.05
+    2025-08-10   Balance:      3672.35   Headroom:      1472.35
+    2025-08-11   Balance:      3533.36   Headroom:      1333.36
+    2025-08-12   Balance:      3053.89   Headroom:       853.89
+    2025-08-13   Balance:      3039.89   Headroom:       839.89
+    2025-08-14   Balance:      2813.89   Headroom:       613.89
+    2025-08-17   Balance:      2708.19   Headroom:       508.19
+    2025-08-24   Balance:      2602.49   Headroom:       402.49
+    2025-08-25   Balance:      2551.34   Headroom:       351.34
+    2025-08-31   Balance:      2445.64   Headroom:       245.64
+    2025-09-03   Balance:      1757.04   Headroom:      -442.96
+    2025-09-07   Balance:      1497.64   Headroom:      -702.36
+    2025-09-08   Balance:      1446.50   Headroom:      -753.50
+    2025-09-11   Balance:      1229.19   Headroom:      -970.81
+    2025-09-12   Balance:       879.19   Headroom:     -1320.81
+    2025-09-13   Balance:       865.19   Headroom:     -1334.81
+    2025-09-14   Balance:       533.48   Headroom:     -1666.52
+    2025-09-21   Balance:       427.78   Headroom:     -1772.22
+    2025-09-22   Balance:       376.63   Headroom:     -1823.37
+    2025-09-28   Balance:       270.93   Headroom:     -1929.07
+    2025-10-03   Balance:      -417.67   Headroom:     -2617.67
+    2025-10-05   Balance:      -523.37   Headroom:     -2723.37
+    2025-10-06   Balance:      -574.52   Headroom:     -2774.52
+    2025-10-07   Balance:      -728.21   Headroom:     -2928.21
+    2025-10-11   Balance:      -945.52   Headroom:     -3145.52
+    2025-10-12   Balance:     -1401.22   Headroom:     -3601.22
+    2025-10-13   Balance:     -1415.22   Headroom:     -3615.22
+    2025-10-14   Balance:     -1641.22   Headroom:     -3841.22
+    2025-10-19   Balance:     -1746.92   Headroom:     -3946.92
+    2025-10-20   Balance:     -1798.07   Headroom:     -3998.07
+    2025-10-26   Balance:     -1903.77   Headroom:     -4103.77
+    2025-11-02   Balance:     -2009.47   Headroom:     -4209.47
+    amount_safe_to_pay             [DIFF]
+      Expected : 597.74
+      Actual   : 0
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[15/25] request_15 (User: user_15) -> [MISMATCH]
+  Req: Amount=3685 EUR Date=2026-01-06 Deadline=2026-02-01 PartialAllowed=False
+  User: AvailBalance=1770.05 MinKeep=1200 MaxInst=None Prefs=['partial_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2026-01-06   Balance:      1710.90   Headroom:       510.90
+    2026-01-07   Balance:      1678.54   Headroom:       478.54
+    2026-01-08   Balance:      1594.13   Headroom:       394.13
+    2026-01-10   Balance:      1393.19   Headroom:       193.19
+    2026-01-13   Balance:      1239.04   Headroom:        39.04
+    2026-01-14   Balance:      1206.68   Headroom:         6.68
+    2026-01-15   Balance:      2840.68   Headroom:      1640.68
+    2026-01-20   Balance:      2781.53   Headroom:      1581.53
+    2026-01-21   Balance:      2749.17   Headroom:      1549.17
+    2026-01-24   Balance:      2707.23   Headroom:      1507.23
+    2026-01-27   Balance:      2648.08   Headroom:      1448.08
+    2026-01-28   Balance:      2615.72   Headroom:      1415.72
+    2026-02-03   Balance:      2556.57   Headroom:      1356.57
+    2026-02-04   Balance:      2088.61   Headroom:       888.61
+    2026-02-07   Balance:      2046.67   Headroom:       846.67
+    2026-02-08   Balance:      1962.26   Headroom:       762.26
+    2026-02-10   Balance:      1744.11   Headroom:       544.11
+    2026-02-11   Balance:      1711.75   Headroom:       511.75
+    2026-02-13   Balance:      1616.75   Headroom:       416.75
+    2026-02-15   Balance:      3250.75   Headroom:      2050.75
+    2026-02-17   Balance:      3191.60   Headroom:      1991.60
+    2026-02-18   Balance:      3159.24   Headroom:      1959.24
+    2026-02-21   Balance:      3117.30   Headroom:      1917.30
+    2026-02-24   Balance:      3058.15   Headroom:      1858.15
+    2026-02-25   Balance:      3025.79   Headroom:      1825.79
+    2026-03-03   Balance:      2966.64   Headroom:      1766.64
+    2026-03-04   Balance:      2498.68   Headroom:      1298.68
+    2026-03-07   Balance:      2456.74   Headroom:      1256.74
+    2026-03-08   Balance:      2372.33   Headroom:      1172.33
+    2026-03-10   Balance:      2154.18   Headroom:       954.18
+    2026-03-11   Balance:      2121.82   Headroom:       921.82
+    2026-03-13   Balance:      2026.82   Headroom:       826.82
+    2026-03-15   Balance:      3660.82   Headroom:      2460.82
+    2026-03-17   Balance:      3601.67   Headroom:      2401.67
+    2026-03-18   Balance:      3569.31   Headroom:      2369.31
+    2026-03-21   Balance:      3527.37   Headroom:      2327.37
+    2026-03-24   Balance:      3468.22   Headroom:      2268.22
+    2026-03-25   Balance:      3435.86   Headroom:      2235.86
+    2026-03-31   Balance:      3376.71   Headroom:      2176.71
+    2026-04-01   Balance:      3344.35   Headroom:      2144.35
+    2026-04-04   Balance:      2866.81   Headroom:      1666.81
+    2026-04-06   Balance:      2866.81   Headroom:      1666.81
+    amount_safe_to_pay             [DIFF]
+      Expected : 83.05
+      Actual   : 6.680
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+[16/25] request_16 (User: user_16) -> [PERFECT MATCH]
+
+[17/25] request_17 (User: user_17) -> [MISMATCH]
+  Req: Amount=274600 INR Date=2026-03-01 Deadline=2026-05-04 PartialAllowed=False
+  User: AvailBalance=550379.58 MinKeep=166100 MaxInst=3 Prefs=['installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2026-03-01   Balance:    550379.58   Headroom:    384279.58
+    2026-03-02   Balance:    500779.58   Headroom:    334679.58
+    2026-03-06   Balance:    476142.92   Headroom:    310042.92
+    2026-03-07   Balance:    471077.26   Headroom:    304977.26
+    2026-03-08   Balance:    451360.56   Headroom:    285260.56
+    2026-03-11   Balance:    419105.56   Headroom:    253005.56
+    2026-03-13   Balance:    401281.05   Headroom:    235181.05
+    2026-03-14   Balance:    396215.40   Headroom:    230115.40
+    2026-03-15   Balance:    808215.40   Headroom:    642115.40
+    2026-03-20   Balance:    792065.89   Headroom:    625965.89
+    2026-03-21   Balance:    787000.23   Headroom:    620900.23
+    2026-03-22   Balance:    780943.53   Headroom:    614843.53
+    2026-03-27   Balance:    764794.02   Headroom:    598694.02
+    2026-03-28   Balance:    759728.37   Headroom:    593628.37
+    2026-04-02   Balance:    710128.37   Headroom:    544028.37
+    2026-04-03   Balance:    693978.85   Headroom:    527878.85
+    2026-04-04   Balance:    688913.20   Headroom:    522813.20
+    2026-04-05   Balance:    682856.50   Headroom:    516756.50
+    2026-04-06   Balance:    674369.35   Headroom:    508269.35
+    2026-04-08   Balance:    660709.35   Headroom:    494609.35
+    2026-04-10   Balance:    644559.84   Headroom:    478459.84
+    2026-04-11   Balance:    607239.18   Headroom:    441139.18
+    2026-04-13   Balance:    605564.18   Headroom:    439464.18
+    2026-04-15   Balance:    811564.18   Headroom:    645464.18
+    2026-04-17   Balance:    795414.67   Headroom:    629314.67
+    2026-04-18   Balance:    790349.02   Headroom:    624249.02
+    2026-04-19   Balance:    784292.32   Headroom:    618192.32
+    2026-04-24   Balance:    768142.81   Headroom:    602042.81
+    2026-04-25   Balance:    763077.15   Headroom:    596977.15
+    2026-05-01   Balance:    746927.64   Headroom:    580827.64
+    2026-05-02   Balance:    692261.99   Headroom:    526161.99
+    2026-05-03   Balance:    686205.29   Headroom:    520105.29
+    2026-05-06   Balance:    677718.14   Headroom:    511618.14
+    2026-05-08   Balance:    647908.62   Headroom:    481808.62
+    2026-05-09   Balance:    642842.97   Headroom:    476742.97
+    2026-05-11   Balance:    610587.97   Headroom:    444487.97
+    2026-05-13   Balance:    608912.97   Headroom:    442812.97
+    2026-05-15   Balance:    798763.46   Headroom:    632663.46
+    2026-05-16   Balance:    793697.80   Headroom:    627597.80
+    2026-05-17   Balance:    787641.10   Headroom:    621541.10
+    2026-05-22   Balance:    771491.59   Headroom:    605391.59
+    2026-05-23   Balance:    766425.94   Headroom:    600325.94
+    2026-05-29   Balance:    750276.43   Headroom:    584176.43
+    2026-05-30   Balance:    745210.77   Headroom:    579110.77
+    amount_safe_to_pay             [DIFF]
+      Expected : 243849.58
+      Actual   : 230115.398
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[18/25] request_18 (User: user_18) -> [MISMATCH]
+  Req: Amount=3246.1 EUR Date=2026-07-07 Deadline=2026-09-15 PartialAllowed=False
+  User: AvailBalance=2486 MinKeep=1400 MaxInst=None Prefs=['full_payment', 'partial_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2026-07-07   Balance:      2378.57   Headroom:       978.57
+    2026-07-08   Balance:      2310.57   Headroom:       910.57
+    2026-07-10   Balance:      2242.57   Headroom:       842.57
+    2026-07-11   Balance:      2001.97   Headroom:       601.97
+    2026-07-14   Balance:      1959.05   Headroom:       559.05
+    2026-07-15   Balance:      4182.99   Headroom:      2782.99
+    2026-07-21   Balance:      4090.35   Headroom:      2690.35
+    2026-07-28   Balance:      4047.43   Headroom:      2647.43
+    2026-07-29   Balance:      3961.37   Headroom:      2561.37
+    2026-07-31   Balance:      3868.73   Headroom:      2468.73
+    2026-08-04   Balance:      3701.73   Headroom:      2301.73
+    2026-08-07   Balance:      3594.30   Headroom:      2194.30
+    2026-08-08   Balance:      3526.30   Headroom:      2126.30
+    2026-08-10   Balance:      3365.66   Headroom:      1965.66
+    2026-08-11   Balance:      3174.78   Headroom:      1774.78
+    2026-08-12   Balance:      3088.72   Headroom:      1688.72
+    2026-08-15   Balance:      5398.72   Headroom:      3998.72
+    2026-08-20   Balance:      5306.08   Headroom:      3906.08
+    2026-08-25   Balance:      5263.16   Headroom:      3863.16
+    2026-08-26   Balance:      5177.10   Headroom:      3777.10
+    2026-08-30   Balance:      5084.46   Headroom:      3684.46
+    2026-09-04   Balance:      4917.46   Headroom:      3517.46
+    2026-09-07   Balance:      4810.03   Headroom:      3410.03
+    2026-09-08   Balance:      4699.11   Headroom:      3299.11
+    2026-09-09   Balance:      4520.41   Headroom:      3120.41
+    2026-09-10   Balance:      4452.41   Headroom:      3052.41
+    2026-09-11   Balance:      4304.45   Headroom:      2904.45
+    2026-09-15   Balance:      6614.45   Headroom:      5214.45
+    2026-09-19   Balance:      6521.81   Headroom:      5121.81
+    2026-09-22   Balance:      6478.89   Headroom:      5078.89
+    2026-09-23   Balance:      6392.83   Headroom:      4992.83
+    2026-09-29   Balance:      6300.19   Headroom:      4900.19
+    2026-10-04   Balance:      6133.19   Headroom:      4733.19
+    2026-10-05   Balance:      6133.19   Headroom:      4733.19
+    amount_safe_to_pay             [DIFF]
+      Expected : 462
+      Actual   : 559.050
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [DIFF]
+      Expected : 2026-09-15:3246.10
+      Actual   : 2026-09-15:3246.1
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[19/25] request_19 (User: user_19) -> [MISMATCH]
+  Req: Amount=39660 INR Date=2024-09-04 Deadline=2024-10-04 PartialAllowed=True
+  User: AvailBalance=199545 MinKeep=92800 MaxInst=2 Prefs=['partial_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2024-09-04   Balance:    163445.00   Headroom:     70645.00
+    2024-09-08   Balance:    157315.81   Headroom:     64515.81
+    2024-09-10   Balance:    152764.87   Headroom:     59964.87
+    2024-09-12   Balance:    141141.40   Headroom:     48341.40
+    2024-09-13   Balance:    123457.53   Headroom:     30657.53
+    2024-09-14   Balance:    123062.53   Headroom:     30262.53
+    2024-09-15   Balance:    241412.53   Headroom:    148612.53
+    2024-09-17   Balance:    236861.59   Headroom:    144061.59
+    2024-09-24   Balance:    232310.65   Headroom:    139510.65
+    2024-09-26   Balance:    229332.54   Headroom:    136532.54
+    2024-10-01   Balance:    224781.60   Headroom:    131981.60
+    2024-10-04   Balance:    188681.60   Headroom:     95881.60
+    2024-10-08   Balance:    178001.47   Headroom:     85201.47
+    2024-10-10   Balance:    175023.36   Headroom:     82223.36
+    2024-10-12   Balance:    166378.00   Headroom:     73578.00
+    2024-10-13   Balance:    148694.13   Headroom:     55894.13
+    2024-10-14   Balance:    148299.13   Headroom:     55499.13
+    2024-10-15   Balance:    262098.19   Headroom:    169298.19
+    2024-10-22   Balance:    257547.25   Headroom:    164747.25
+    2024-10-24   Balance:    254569.14   Headroom:    161769.14
+    2024-10-29   Balance:    250018.20   Headroom:    157218.20
+    2024-11-04   Balance:    213918.20   Headroom:    121118.20
+    2024-11-05   Balance:    209367.26   Headroom:    116567.26
+    2024-11-07   Balance:    206389.15   Headroom:    113589.15
+    2024-11-08   Balance:    200259.96   Headroom:    107459.96
+    2024-11-12   Balance:    181229.80   Headroom:     88429.80
+    2024-11-13   Balance:    169379.80   Headroom:     76579.80
+    2024-11-14   Balance:    168984.80   Headroom:     76184.80
+    2024-11-15   Balance:    287334.80   Headroom:    194534.80
+    2024-11-19   Balance:    282783.86   Headroom:    189983.86
+    2024-11-21   Balance:    279805.75   Headroom:    187005.75
+    2024-11-26   Balance:    275254.81   Headroom:    182454.81
+    2024-12-03   Balance:    270703.87   Headroom:    177903.87
+    amount_safe_to_pay             [DIFF]
+      Expected : 28820
+      Actual   : 30262.532
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [DIFF]
+      Expected : 2024-09-04:28820|2024-09-15:10840
+      Actual   : 2024-09-04:30262.53|2024-09-15:9397.47
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[20/25] request_20 (User: user_20) -> [MISMATCH]
+  Req: Amount=303700 INR Date=2026-02-07 Deadline=2026-02-22 PartialAllowed=False
+  User: AvailBalance=102609.05 MinKeep=64500 MaxInst=11 Prefs=['full_payment', 'partial_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2026-02-07   Balance:     93869.05   Headroom:     29369.05
+    2026-02-08   Balance:     89399.05   Headroom:     24899.05
+    2026-02-09   Balance:     78274.66   Headroom:     13774.66
+    2026-02-11   Balance:     77909.66   Headroom:     13409.66
+    2026-02-12   Balance:     72771.72   Headroom:      8271.72
+    2026-02-15   Balance:    180771.72   Headroom:    116271.72
+    2026-02-19   Balance:    177005.70   Headroom:    112505.70
+    2026-02-20   Balance:    173615.18   Headroom:    109115.18
+    2026-02-26   Balance:    170625.51   Headroom:    106125.51
+    2026-03-01   Balance:    166859.50   Headroom:    102359.50
+    2026-03-02   Balance:    158909.50   Headroom:     94409.50
+    2026-03-05   Balance:    151139.63   Headroom:     86639.63
+    2026-03-06   Balance:    147849.63   Headroom:     83349.63
+    2026-03-07   Balance:    139109.63   Headroom:     74609.63
+    2026-03-09   Balance:    132455.30   Headroom:     67955.30
+    2026-03-11   Balance:    128324.29   Headroom:     63824.29
+    2026-03-12   Balance:    125334.62   Headroom:     60834.62
+    2026-03-13   Balance:    121944.10   Headroom:     57444.10
+    2026-03-14   Balance:    119795.82   Headroom:     55295.82
+    2026-03-15   Balance:    227795.82   Headroom:    163295.82
+    2026-03-21   Balance:    224029.81   Headroom:    159529.81
+    2026-03-26   Balance:    221040.14   Headroom:    156540.14
+    2026-03-31   Balance:    217274.13   Headroom:    152774.13
+    2026-04-02   Balance:    209324.13   Headroom:    144824.13
+    2026-04-03   Balance:    205933.61   Headroom:    141433.61
+    2026-04-05   Balance:    198163.74   Headroom:    133663.74
+    2026-04-06   Balance:    194873.74   Headroom:    130373.74
+    2026-04-07   Balance:    186133.74   Headroom:    121633.74
+    2026-04-09   Balance:    176489.74   Headroom:    111989.74
+    2026-04-10   Balance:    172723.73   Headroom:    108223.73
+    2026-04-11   Balance:    172358.73   Headroom:    107858.73
+    2026-04-13   Balance:    170210.45   Headroom:    105710.45
+    2026-04-15   Balance:    278210.45   Headroom:    213710.45
+    2026-04-20   Balance:    274444.44   Headroom:    209944.44
+    2026-04-23   Balance:    271454.77   Headroom:    206954.77
+    2026-04-24   Balance:    268064.25   Headroom:    203564.25
+    2026-04-30   Balance:    264298.24   Headroom:    199798.24
+    2026-05-02   Balance:    256348.24   Headroom:    191848.24
+    2026-05-05   Balance:    248578.37   Headroom:    184078.37
+    2026-05-06   Balance:    245288.37   Headroom:    180788.37
+    2026-05-07   Balance:    233558.70   Headroom:    169058.70
+    2026-05-08   Balance:    233558.70   Headroom:    169058.70
+    amount_safe_to_pay             [DIFF]
+      Expected : 5400
+      Actual   : 8271.718
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[21/25] request_21 (User: user_21) -> [MISMATCH]
+  Req: Amount=1574.4 USD Date=2026-04-03 Deadline=2026-04-14 PartialAllowed=False
+  User: AvailBalance=3911.35 MinKeep=1800 MaxInst=None Prefs=['full_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2026-04-03   Balance:      3911.35   Headroom:      2111.35
+    2026-04-05   Balance:      3858.35   Headroom:      2058.35
+    2026-04-06   Balance:      3652.66   Headroom:      1852.66
+    2026-04-09   Balance:      3605.66   Headroom:      1805.66
+    2026-04-11   Balance:      3483.24   Headroom:      1683.24
+    2026-04-12   Balance:      3472.24   Headroom:      1672.24
+    2026-04-15   Balance:      7984.24   Headroom:      6184.24
+    2026-04-16   Balance:      7860.60   Headroom:      6060.60
+    2026-04-17   Balance:      7769.78   Headroom:      5969.78
+    2026-04-26   Balance:      7688.17   Headroom:      5888.17
+    2026-05-02   Balance:      6969.37   Headroom:      5169.37
+    2026-05-06   Balance:      6763.67   Headroom:      4963.67
+    2026-05-07   Balance:      6721.64   Headroom:      4921.64
+    2026-05-08   Balance:      6630.83   Headroom:      4830.83
+    2026-05-09   Balance:      6583.83   Headroom:      4783.83
+    2026-05-11   Balance:      6461.41   Headroom:      4661.41
+    2026-05-12   Balance:      6450.41   Headroom:      4650.41
+    2026-05-15   Balance:      8706.41   Headroom:      6906.41
+    2026-05-16   Balance:      8624.80   Headroom:      6824.80
+    2026-05-26   Balance:      8543.19   Headroom:      6743.19
+    2026-05-28   Balance:      8501.15   Headroom:      6701.15
+    2026-05-29   Balance:      8410.34   Headroom:      6610.34
+    2026-06-02   Balance:      7691.54   Headroom:      5891.54
+    2026-06-05   Balance:      7609.93   Headroom:      5809.93
+    2026-06-06   Balance:      7485.85   Headroom:      5685.85
+    2026-06-09   Balance:      7438.85   Headroom:      5638.85
+    2026-06-10   Balance:      7316.43   Headroom:      5516.43
+    2026-06-12   Balance:      7305.43   Headroom:      5505.43
+    2026-06-15   Balance:      9479.82   Headroom:      7679.82
+    2026-06-18   Balance:      9437.79   Headroom:      7637.79
+    2026-06-19   Balance:      9346.97   Headroom:      7546.97
+    2026-06-25   Balance:      9265.36   Headroom:      7465.36
+    2026-07-02   Balance:      8546.56   Headroom:      6746.56
+    amount_safe_to_pay             [DIFF]
+      Expected : 1543.35
+      Actual   : 1574.4
+    affordability_status           [DIFF]
+      Expected : affordable_with_plan
+      Actual   : affordable_now
+    recommended_payment_method     [OK]
+    payment_plan                   [DIFF]
+      Expected : 2026-04-03:1574.40
+      Actual   : 2026-04-03:1574.4
+    earliest_date_for_full_payment [DIFF]
+      Expected : 2026-04-15
+      Actual   : 2026-04-03
+    spending_changes_needed        [DIFF]
+      Expected : stop:event_1815|reduce_to:event_1816:23.50
+      Actual   : none
+
+[22/25] request_22 (User: user_22) -> [MISMATCH]
+  Req: Amount=731.5 EUR Date=2024-12-05 Deadline=2025-02-10 PartialAllowed=True
+  User: AvailBalance=1132.46 MinKeep=500 MaxInst=6 Prefs=['installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2024-12-05   Balance:      1117.88   Headroom:       617.88
+    2024-12-07   Balance:      1090.54   Headroom:       590.54
+    2024-12-08   Balance:      1047.54   Headroom:       547.54
+    2024-12-11   Balance:      1008.58   Headroom:       508.58
+    2024-12-12   Balance:       987.99   Headroom:       487.99
+    2024-12-13   Balance:       972.06   Headroom:       472.06
+    2024-12-14   Balance:       967.06   Headroom:       467.06
+    2024-12-15   Balance:      1583.06   Headroom:      1083.06
+    2024-12-16   Balance:      1562.20   Headroom:      1062.20
+    2024-12-18   Balance:      1540.24   Headroom:      1040.24
+    2024-12-19   Balance:      1525.65   Headroom:      1025.65
+    2024-12-25   Balance:      1503.69   Headroom:      1003.69
+    2024-12-26   Balance:      1489.11   Headroom:       989.11
+    2024-12-27   Balance:      1473.18   Headroom:       973.18
+    2025-01-01   Balance:      1451.22   Headroom:       951.22
+    2025-01-02   Balance:      1436.64   Headroom:       936.64
+    2025-01-03   Balance:      1258.44   Headroom:       758.44
+    2025-01-07   Balance:      1231.10   Headroom:       731.10
+    2025-01-08   Balance:      1209.13   Headroom:       709.13
+    2025-01-09   Balance:      1194.55   Headroom:       694.55
+    2025-01-10   Balance:      1178.62   Headroom:       678.62
+    2025-01-11   Balance:      1161.62   Headroom:       661.62
+    2025-01-12   Balance:      1155.62   Headroom:       655.62
+    2025-01-14   Balance:      1150.62   Headroom:       650.62
+    2025-01-15   Balance:      1744.66   Headroom:      1244.66
+    2025-01-16   Balance:      1709.21   Headroom:      1209.21
+    2025-01-22   Balance:      1687.25   Headroom:      1187.25
+    2025-01-23   Balance:      1672.67   Headroom:      1172.67
+    2025-01-24   Balance:      1656.74   Headroom:      1156.74
+    2025-01-29   Balance:      1634.78   Headroom:      1134.78
+    2025-01-30   Balance:      1620.19   Headroom:      1120.19
+    2025-02-03   Balance:      1441.99   Headroom:       941.99
+    2025-02-05   Balance:      1420.03   Headroom:       920.03
+    2025-02-06   Balance:      1405.45   Headroom:       905.45
+    2025-02-07   Balance:      1362.18   Headroom:       862.18
+    2025-02-11   Balance:      1345.18   Headroom:       845.18
+    2025-02-12   Balance:      1317.22   Headroom:       817.22
+    2025-02-13   Balance:      1302.64   Headroom:       802.64
+    2025-02-14   Balance:      1297.64   Headroom:       797.64
+    2025-02-15   Balance:      1913.64   Headroom:      1413.64
+    2025-02-16   Balance:      1892.77   Headroom:      1392.77
+    2025-02-19   Balance:      1870.81   Headroom:      1370.81
+    2025-02-20   Balance:      1856.23   Headroom:      1356.23
+    2025-02-21   Balance:      1840.30   Headroom:      1340.30
+    2025-02-26   Balance:      1818.33   Headroom:      1318.33
+    2025-02-27   Balance:      1803.75   Headroom:      1303.75
+    2025-03-03   Balance:      1625.55   Headroom:      1125.55
+    2025-03-05   Balance:      1603.59   Headroom:      1103.59
+    amount_safe_to_pay             [DIFF]
+      Expected : 475.46
+      Actual   : 467.064
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[23/25] request_23 (User: user_23) -> [MISMATCH]
+  Req: Amount=38016 ZAR Date=2025-05-07 Deadline=2025-07-15 PartialAllowed=False
+  User: AvailBalance=51957.9 MinKeep=27000 MaxInst=12 Prefs=['full_payment', 'partial_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2025-05-07   Balance:     50411.26   Headroom:     23411.26
+    2025-05-08   Balance:     47731.11   Headroom:     20731.11
+    2025-05-11   Balance:     46177.91   Headroom:     19177.91
+    2025-05-12   Balance:     44800.02   Headroom:     17800.02
+    2025-05-13   Balance:     38948.02   Headroom:     11948.02
+    2025-05-14   Balance:     35789.74   Headroom:      8789.74
+    2025-05-15   Balance:     76398.67   Headroom:     49398.67
+    2025-05-21   Balance:     74852.02   Headroom:     47852.02
+    2025-05-28   Balance:     73305.38   Headroom:     46305.38
+    2025-05-29   Balance:     72424.51   Headroom:     45424.51
+    2025-06-04   Balance:     55565.86   Headroom:     28565.86
+    2025-06-08   Balance:     52885.71   Headroom:     25885.71
+    2025-06-11   Balance:     51339.07   Headroom:     24339.07
+    2025-06-12   Balance:     49080.31   Headroom:     22080.31
+    2025-06-13   Balance:     41912.57   Headroom:     14912.57
+    2025-06-14   Balance:     41616.67   Headroom:     14616.67
+    2025-06-15   Balance:     83106.47   Headroom:     56106.47
+    2025-06-18   Balance:     81559.83   Headroom:     54559.83
+    2025-06-25   Balance:     80013.19   Headroom:     53013.19
+    2025-06-26   Balance:     79132.31   Headroom:     52132.31
+    2025-07-02   Balance:     77585.67   Headroom:     50585.67
+    2025-07-04   Balance:     62273.67   Headroom:     35273.67
+    2025-07-08   Balance:     59593.52   Headroom:     32593.52
+    2025-07-09   Balance:     58046.88   Headroom:     31046.88
+    2025-07-10   Balance:     57166.00   Headroom:     30166.00
+    2025-07-12   Balance:     55788.11   Headroom:     28788.11
+    2025-07-13   Balance:     48620.38   Headroom:     21620.38
+    2025-07-14   Balance:     48324.48   Headroom:     21324.48
+    2025-07-15   Balance:     89814.28   Headroom:     62814.28
+    2025-07-16   Balance:     88267.64   Headroom:     61267.64
+    2025-07-23   Balance:     86720.99   Headroom:     59720.99
+    2025-07-24   Balance:     85840.12   Headroom:     58840.12
+    2025-07-30   Balance:     84293.48   Headroom:     57293.48
+    2025-08-04   Balance:     68981.48   Headroom:     41981.48
+    2025-08-05   Balance:     68981.48   Headroom:     41981.48
+    amount_safe_to_pay             [DIFF]
+      Expected : 9152
+      Actual   : 8789.742
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[24/25] request_24 (User: user_24) -> [MISMATCH]
+  Req: Amount=109600 INR Date=2026-01-04 Deadline=2026-02-08 PartialAllowed=True
+  User: AvailBalance=85045 MinKeep=51000 MaxInst=None Prefs=['partial_payment']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2026-01-04   Balance:     85045.00   Headroom:     34045.00
+    2026-01-05   Balance:     81554.50   Headroom:     30554.50
+    2026-01-06   Balance:     76919.11   Headroom:     25919.11
+    2026-01-07   Balance:     75581.57   Headroom:     24581.57
+    2026-01-08   Balance:     74381.57   Headroom:     23381.57
+    2026-01-10   Balance:     69866.30   Headroom:     18866.30
+    2026-01-11   Balance:     67681.30   Headroom:     16681.30
+    2026-01-12   Balance:     64413.06   Headroom:     13413.06
+    2026-01-15   Balance:    125413.06   Headroom:     74413.06
+    2026-01-16   Balance:    123287.67   Headroom:     72287.67
+    2026-01-17   Balance:    119948.51   Headroom:     68948.51
+    2026-01-22   Balance:    118610.97   Headroom:     67610.97
+    2026-01-24   Balance:    116609.36   Headroom:     65609.36
+    2026-01-26   Balance:    114483.97   Headroom:     63483.97
+    2026-01-27   Balance:    113146.42   Headroom:     62146.42
+    2026-01-31   Balance:    111144.81   Headroom:     60144.81
+    2026-02-01   Balance:     91207.27   Headroom:     40207.27
+    2026-02-05   Balance:     85591.38   Headroom:     34591.38
+    2026-02-06   Balance:     81743.83   Headroom:     30743.83
+    2026-02-07   Balance:     79742.22   Headroom:     28742.22
+    2026-02-08   Balance:     78542.22   Headroom:     27542.22
+    2026-02-09   Balance:     76028.57   Headroom:     25028.57
+    2026-02-11   Balance:     72405.33   Headroom:     21405.33
+    2026-02-14   Balance:     70403.71   Headroom:     19403.71
+    2026-02-15   Balance:    129278.32   Headroom:     78278.32
+    2026-02-16   Balance:    127940.78   Headroom:     76940.78
+    2026-02-21   Balance:    124601.62   Headroom:     73601.62
+    2026-02-25   Balance:    122476.23   Headroom:     71476.23
+    2026-02-26   Balance:    121138.69   Headroom:     70138.69
+    2026-02-28   Balance:    119137.07   Headroom:     68137.07
+    2026-03-01   Balance:    100537.07   Headroom:     49537.07
+    2026-03-03   Balance:     99199.53   Headroom:     48199.53
+    2026-03-05   Balance:     95709.03   Headroom:     44709.03
+    2026-03-06   Balance:     93199.03   Headroom:     42199.03
+    2026-03-07   Balance:     89072.03   Headroom:     38072.03
+    2026-03-08   Balance:     86534.48   Headroom:     35534.48
+    2026-03-11   Balance:     83665.83   Headroom:     32665.83
+    2026-03-13   Balance:     80397.59   Headroom:     29397.59
+    2026-03-14   Balance:     78395.98   Headroom:     27395.98
+    2026-03-15   Balance:    139395.98   Headroom:     88395.98
+    2026-03-17   Balance:    137270.59   Headroom:     86270.59
+    2026-03-18   Balance:    135933.05   Headroom:     84933.05
+    2026-03-21   Balance:    133931.43   Headroom:     82931.43
+    2026-03-23   Balance:    132593.89   Headroom:     81593.89
+    2026-03-27   Balance:    130468.50   Headroom:     79468.50
+    2026-03-28   Balance:    127129.34   Headroom:     76129.34
+    2026-04-01   Balance:    108529.34   Headroom:     57529.34
+    2026-04-02   Balance:    107191.80   Headroom:     56191.80
+    2026-04-04   Balance:    105190.18   Headroom:     54190.18
+    amount_safe_to_pay             [DIFF]
+      Expected : 13420
+      Actual   : 13413.062
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+[25/25] request_25 (User: user_25) -> [MISMATCH]
+  Req: Amount=60496000 IDR Date=2024-03-06 Deadline=2024-04-17 PartialAllowed=True
+  User: AvailBalance=32063050 MinKeep=23379100 MaxInst=3 Prefs=['full_payment', 'installments']
+
+    RAW FORECAST TRACE
+    ----------------------------------------
+    2024-03-06   Balance:  29828662.09   Headroom:   6449562.09
+    2024-03-07   Balance:  28924262.09   Headroom:   5545162.09
+    2024-03-09   Balance:  27064465.15   Headroom:   3685365.15
+    2024-03-10   Balance:  26467902.61   Headroom:   3088802.61
+    2024-03-12   Balance:  26341552.61   Headroom:   2962452.61
+    2024-03-13   Balance:  25309068.36   Headroom:   1929968.36
+    2024-03-14   Balance:  24250039.62   Headroom:    870939.62
+    2024-03-15   Balance:  80653465.08   Headroom:  57274365.08
+    2024-03-16   Balance:  80193872.66   Headroom:  56814772.66
+    2024-03-19   Balance:  78907875.72   Headroom:  55528775.72
+    2024-03-20   Balance:  77278828.93   Headroom:  53899728.93
+    2024-03-25   Balance:  76682266.39   Headroom:  53303166.39
+    2024-03-27   Balance:  75649782.15   Headroom:  52270682.15
+    2024-03-29   Balance:  74363785.21   Headroom:  50984685.21
+    2024-03-30   Balance:  73767222.66   Headroom:  50388122.66
+    2024-04-02   Balance:  66813222.66   Headroom:  43434122.66
+    2024-04-03   Balance:  65780738.42   Headroom:  42401638.42
+    2024-04-04   Balance:  65184175.88   Headroom:  41805075.88
+    2024-04-06   Balance:  63982272.21   Headroom:  40603172.21
+    2024-04-07   Balance:  63077872.21   Headroom:  39698772.21
+    2024-04-08   Balance:  61791875.27   Headroom:  38412775.27
+    2024-04-09   Balance:  60621512.72   Headroom:  37242412.72
+    2024-04-10   Balance:  59589028.48   Headroom:  36209928.48
+    2024-04-12   Balance:  59462678.48   Headroom:  36083578.48
+    2024-04-14   Balance:  57807087.19   Headroom:  34427987.19
+    2024-04-15   Balance:  86307081.19   Headroom:  62927981.19
+    2024-04-16   Balance:  85847488.78   Headroom:  62468388.78
+    2024-04-17   Balance:  84815004.53   Headroom:  61435904.53
+    2024-04-18   Balance:  83529007.60   Headroom:  60149907.60
+    2024-04-19   Balance:  82932445.05   Headroom:  59553345.05
+    2024-04-24   Balance:  81303398.26   Headroom:  57924298.26
+    2024-04-28   Balance:  80017401.33   Headroom:  56638301.33
+    2024-04-29   Balance:  79420838.78   Headroom:  56041738.78
+    2024-05-01   Balance:  78388354.54   Headroom:  55009254.54
+    2024-05-02   Balance:  71434354.54   Headroom:  48055254.54
+    2024-05-04   Balance:  70837791.99   Headroom:  47458691.99
+    2024-05-06   Balance:  69635888.32   Headroom:  46256788.32
+    2024-05-07   Balance:  68731488.32   Headroom:  45352388.32
+    2024-05-08   Balance:  66413007.15   Headroom:  43033907.15
+    2024-05-09   Balance:  65242644.60   Headroom:  41863544.60
+    2024-05-12   Balance:  65116294.60   Headroom:  41737194.60
+    2024-05-14   Balance:  64519732.05   Headroom:  41140632.05
+    2024-05-15   Balance:  90928213.07   Headroom:  67549113.07
+    2024-05-17   Balance:  90468620.65   Headroom:  67089520.65
+    2024-05-18   Balance:  89182623.72   Headroom:  65803523.72
+    2024-05-19   Balance:  88586061.17   Headroom:  65206961.17
+    2024-05-22   Balance:  87553576.93   Headroom:  64174476.93
+    2024-05-24   Balance:  86957014.38   Headroom:  63577914.38
+    2024-05-28   Balance:  85671017.45   Headroom:  62291917.45
+    2024-05-29   Balance:  84041970.66   Headroom:  60662870.66
+    2024-06-02   Balance:  77087970.66   Headroom:  53708870.66
+    2024-06-03   Balance:  76491408.11   Headroom:  53112308.11
+    2024-06-04   Balance:  76491408.11   Headroom:  53112308.11
+    amount_safe_to_pay             [DIFF]
+      Expected : 1425000
+      Actual   : 870939.622
+    affordability_status           [OK]
+    recommended_payment_method     [OK]
+    payment_plan                   [OK]
+    earliest_date_for_full_payment [OK]
+    spending_changes_needed        [OK]
+
+================================================================================
+Summary: Full Matches = 3/25 (12.0%), Mismatches = 22/25 (88.0%)
+================================================================================

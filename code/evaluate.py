@@ -28,6 +28,7 @@ def evaluate_samples(dataset_dir: str = 'dataset') -> Dict[str, Any]:
     ds = loaders.load_all(dataset_dir)
     fx_graph = fx.FXGraph(ds.exchange_rates)
     img_res = extraction.extract_all_images(ds.images, dataset_dir)
+    msg_res = extraction.extract_all_messages(ds.messages)
 
     total_samples = len(ds.samples)
     field_matches = {
@@ -61,7 +62,7 @@ def evaluate_samples(dataset_dir: str = 'dataset') -> Dict[str, Any]:
         )
 
         ledger = events.normalize_and_build_ledger(
-            s.user_id, p, evs, msgs, imgs, img_res, fx_graph, s.request_date
+            s.user_id, p, evs, msgs, imgs, img_res, msg_res, fx_graph, s.request_date
         )
         decision = policy.evaluate_request(req, ledger, opts)
         validated = verify.verify_output_row(req, ledger, opts, decision)
