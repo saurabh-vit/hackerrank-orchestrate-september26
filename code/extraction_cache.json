@@ -1,0 +1,101 @@
+{
+  "images": {
+    "image_01": {
+      "amount": "4365000",
+      "currency": "IDR",
+      "date": "2019-09-02",
+      "note": "Payslip - Net Pay IDR 4,365,000"
+    },
+    "image_02": {
+      "amount": "100000",
+      "currency": "INR",
+      "date": "2023-08-11",
+      "note": "Rent receipt balance due INR 100,000"
+    },
+    "image_03": {
+      "amount": "41272",
+      "currency": "INR",
+      "date": "2026-02-27",
+      "note": "Grocery bill net amount INR 41,272"
+    },
+    "image_04": {
+      "amount": "2854",
+      "currency": "INR",
+      "date": "",
+      "note": "Grocery order item bill INR 2,854"
+    },
+    "image_05": {
+      "amount": "704.05",
+      "currency": "INR",
+      "date": "2026-02-06",
+      "note": "Airtel Telecom bill INR 704.05"
+    },
+    "image_06": {
+      "amount": "1995",
+      "currency": "INR",
+      "date": "",
+      "note": "Blinkit Grocery tax invoice INR 1,995"
+    },
+    "image_07": {
+      "amount": "8528",
+      "currency": "INR",
+      "date": "2025-10-29",
+      "note": "Restaurant tax invoice INR 8,528"
+    },
+    "image_08": {
+      "amount": "15339",
+      "currency": "INR",
+      "date": "2026-07-24",
+      "note": "Property maintenance receipt INR 15,339"
+    },
+    "image_09": {
+      "amount": "723",
+      "currency": "INR",
+      "date": "2026-07-06",
+      "note": "Water bill receipt INR 723"
+    },
+    "image_10": {
+      "amount": "79679.26",
+      "currency": "INR",
+      "date": "",
+      "note": "Grocery tax invoice total INR 79,679.26"
+    },
+    "image_11": {
+      "amount": "3650",
+      "currency": "INR",
+      "date": "2023-01-19",
+      "note": "Hospital bill amount payable INR 3,650"
+    },
+    "image_12": {
+      "amount": "33.50",
+      "currency": "USD",
+      "date": "2025-10-01",
+      "note": "CityCab taxi receipt USD 33.50"
+    },
+    "image_13": {
+      "amount": "2298",
+      "currency": "INR",
+      "date": "",
+      "note": "DailyObjects order total paid INR 2,298"
+    },
+    "image_14": {
+      "amount": "4543",
+      "currency": "INR",
+      "date": "",
+      "note": "Pharmacy bill total INR 4,543"
+    },
+    "image_15": {
+      "amount": "9968",
+      "currency": "INR",
+      "date": "2026-06-07",
+      "note": "IndiGo flight ticket total INR 9,968"
+    },
+    "image_16": {
+      "amount": "393.22",
+      "currency": "INR",
+      "date": "2026-09-03",
+      "note": "EV charging invoice total INR 393.22"
+    }
+  },
+  "messages": {}
+}
