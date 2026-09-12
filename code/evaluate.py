@@ -62,7 +62,7 @@ def evaluate_samples(dataset_dir: str = 'dataset') -> Dict[str, Any]:
         )
 
         ledger = events.normalize_and_build_ledger(
-            s.user_id, p, evs, msgs, imgs, img_res, msg_res, fx_graph, s.request_date
+            s.user_id, p, evs, msgs, imgs, img_res, msg_res, fx_graph, s.request_date, ds.global_reference_date
         )
         decision = policy.evaluate_request(req, ledger, opts)
         validated = verify.verify_output_row(req, ledger, opts, decision)

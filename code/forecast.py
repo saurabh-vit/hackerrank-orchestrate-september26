@@ -103,7 +103,7 @@ def simulate_balance_timeline(
                 daily_debits[cur_d] = daily_debits.get(cur_d, Decimal('0')) + amt
 
     # 5. Day-by-day balance calculation
-    bal = ledger.profile.current_available_balance
+    bal = ledger.balance_at_eval_date
     min_bal = ledger.profile.minimum_balance_to_keep
     timeline: List[Tuple[date, Decimal, Decimal]] = []
 
@@ -129,13 +129,46 @@ def compute_forecast(
     1. amount_safe_to_pay on request_date
     2. earliest_date_for_full_payment within the 90-day window
     """
+    # base_timeline is the forecast WITHOUT the requested payment
     base_timeline = simulate_balance_timeline(
         ledger, request_date, num_days=90, spending_changes=spending_changes
     )
 
-    min_headroom_today = min(entry[2] for entry in base_timeline)
-    amount_safe_today = max(Decimal('0'), min(requested_amount, min_headroom_today))
+    # 1. Calculate amount_safe_to_pay using monotonic safety predicate
+    # We want the largest X in [0, requested_amount] such that paying X on request_date is safe.
+    def is_payment_safe(amount: Decimal) -> bool:
+        if amount <= 0: return True
+        test_payments = {request_date: amount}
+        timeline = simulate_balance_timeline(
+            ledger, request_date, num_days=90,
+            spending_changes=spending_changes,
+            plan_payments=test_payments
+        )
+        return all(entry[2] >= Decimal('0') for entry in timeline)
 
+    low = Decimal('0')
+    high = requested_amount
+    best_safe = Decimal('0')
+
+    # Binary search for the maximum safe amount
+    # Use 20 iterations for high precision (approx 10^-6 relative error)
+    for _ in range(20):
+        mid = (low + high) / 2
+        if is_payment_safe(mid):
+            best_safe = mid
+            low = mid
+        else:
+            high = mid
+
+    # Final check: can we pay the full requested amount?
+    if is_payment_safe(requested_amount):
+        best_safe = requested_amount
+
+    # The benchmark often uses the minimum headroom as a proxy,
+    # but binary search ensures we find the exact limit.
+    amount_safe_today = best_safe
+
+    # 2. Calculate earliest_date_for_full_payment
     earliest_date = None
     for day_offset in range(91):
         candidate_date = request_date + timedelta(days=day_offset)
@@ -145,6 +178,7 @@ def compute_forecast(
             spending_changes=spending_changes,
             plan_payments=test_payments
         )
+        # Safety check: balance must be >= min_bal for all t >= candidate_date
         is_safe = all(
             entry[2] >= Decimal('0')
             for entry in test_timeline
@@ -157,7 +191,7 @@ def compute_forecast(
     return ForecastResult(
         amount_safe_to_pay=amount_safe_today,
         earliest_date_for_full_payment=earliest_date,
-        min_headroom_today=min_headroom_today,
+        min_headroom_today=min(entry[2] for entry in base_timeline),
         daily_balances=base_timeline,
     )
 

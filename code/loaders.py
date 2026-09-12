@@ -425,6 +425,10 @@ class DataStore:
         # Samples by id
         self.samples_by_id = {s.request_id: s for s in self.samples}
 
+        # Global reference date for balance reconstruction
+        all_settlement_dates = [e.settlement_date for e in self.events if e.settlement_date]
+        self.global_reference_date = max(all_settlement_dates) if all_settlement_dates else date(2026, 9, 13)
+
 
 def load_all(dataset_dir: str) -> DataStore:
     """Load all datasets and build indexes. Validate invariants."""

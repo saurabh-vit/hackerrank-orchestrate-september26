@@ -63,7 +63,7 @@ def run_pipeline(dataset_dir: str = 'dataset', output_csv_path: Optional[str] = 
         # Build ledger
         ledger = events.normalize_and_build_ledger(
             req.user_id, profile, user_events, user_messages, user_images,
-            img_res, msg_res, fx_graph, req.request_date
+            img_res, msg_res, fx_graph, req.request_date, ds.global_reference_date
         )
 
         # Policy decision

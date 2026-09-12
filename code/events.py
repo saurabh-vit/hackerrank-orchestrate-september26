@@ -41,6 +41,7 @@ class UserLedger:
     """Normalized ledger and financial state for a single user."""
     user_id: str
     profile: Profile
+    balance_at_eval_date: Decimal
     events: List[FinancialEvent]
     pending_debits: List[FinancialEvent]
     scheduled_events: List[FinancialEvent]
@@ -59,6 +60,7 @@ def normalize_and_build_ledger(
     message_extractions: Dict[str, Dict[str, Any]],
     fx_graph: FXGraph,
     eval_date: date,
+    global_reference_date: date,
 ) -> UserLedger:
     """
     Build a cleaned, normalized, deduplicated ledger for a user as of eval_date.
@@ -253,18 +255,20 @@ def normalize_and_build_ledger(
 
         # Calculate base amount
         if desc_key == 'variable':
-            # For variable expenses (groceries/dining/transport): use average of recent events
-            recent = ev_list[-5:]
-            base_amt = sum(e.amount_home for e in recent) / Decimal(len(recent))
-            if is_weekly:
+            # For variable expenses (groceries/dining/transport): use average of all detected events
+            base_amt = sum(e.amount_home for e in ev_list) / Decimal(len(ev_list))
+            if 6 <= median_interval <= 8:
                 interval_days = 7
-            elif is_biweekly:
+                dom = None
+            elif 13 <= median_interval <= 16:
                 interval_days = 14
-            elif is_monthly:
+                dom = None
+            elif 25 <= median_interval <= 35:
                 interval_days = 30
+                dom = last_date.day
             else:
-                interval_days = max(1, round(avg_interval))
-            dom = None
+                interval_days = max(1, round(median_interval))
+                dom = None
             flex = last_ev.flexibility or 'fixed'
             min_allowed = last_ev.minimum_allowed_amount
         else:
@@ -329,9 +333,30 @@ def normalize_and_build_ledger(
                 source_type='scheduled',
             ))
 
+    # 6. Adjust balance from the global reference date to eval_date
+    # The profile's current_available_balance is assumed to be as of global_reference_date
+    ref_date = global_reference_date
+    bal = profile.current_available_balance
+    for e in cleaned_events:
+        eff_date = e.settlement_date or e.event_date
+        if eff_date is None or e.status != 'settled':
+            continue
+        if e.event_id in cancelled_event_ids or e.event_id in linked_to_settled:
+            continue
+
+        if eval_date >= ref_date:
+            if ref_date < eff_date <= eval_date:
+                if e.direction == 'credit': bal += e.amount_home
+                elif e.direction == 'debit': bal -= e.amount_home
+        else:
+            if eval_date < eff_date <= ref_date:
+                if e.direction == 'credit': bal -= e.amount_home
+                elif e.direction == 'debit': bal += e.amount_home
+
     return UserLedger(
         user_id=user_id,
         profile=profile,
+        balance_at_eval_date=bal,
         events=cleaned_events,
         pending_debits=pending_debits,
         scheduled_events=scheduled_events,
